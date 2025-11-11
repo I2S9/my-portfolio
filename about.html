@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="about" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base />
+  <title>About me</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="public/head.js"></script>
+  <link rel="stylesheet" href="public/styles.css" />
+  <style>
+    /* Fond blanc pour toute la page */
+    body {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    /* Centrer la navbar */
+    .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .navigation__list {
+      margin-left: 0 !important;
+    }
+    /* Rapprocher les éléments de la navbar */
+    .navigation__list__item {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .navigation__list__link {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    /* Sélecteur de langue */
+    .language-selector {
+      position: relative;
+    }
+    /* Augmenter la taille de la police pour tous les éléments de la navbar */
+    .navigation__list__link {
+      font-size: 1.1em !important;
+      color: #000000 !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    /* Assurer que tous les éléments de la navbar sont visibles */
+    .navigation__list__item {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    .navigation__list {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    /* S'assurer que les éléments de langue ont le même style de police que les autres éléments de la navbar */
+    .language-selector .navigation__list__link,
+    .language-toggle {
+      font-size: 1.1em !important;
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      color: #000000 !important;
+    }
+    /* Supprimer le contour blanc lors de la sélection/focus des éléments de la navbar */
+    .navigation__list__link:focus,
+    .navigation__list__link:active,
+    .language-toggle:focus,
+    .language-toggle:active {
+      outline: none !important;
+      -webkit-outline: none !important;
+      box-shadow: none !important;
+    }
+    .navigation__list__link::selection,
+    .language-toggle::selection {
+      background: transparent;
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 8px;
+      padding: 8px 0;
+      margin-top: 4px;
+      min-width: 60px;
+      list-style: none;
+      z-index: 1000;
+    }
+    .language-selector:hover .language-dropdown,
+    .language-selector:focus-within .language-dropdown {
+      display: block;
+    }
+    .language-dropdown li {
+      margin: 0;
+      padding: 0;
+    }
+    .language-dropdown a {
+      display: block;
+      padding: 8px 18pt;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    .language-dropdown a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .arrow-down {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+    .arrow-down svg {
+      width: 10px;
+      height: 6px;
+    }
+    /* Section About Me */
+    .about-section {
+      min-height: 100vh;
+      padding: 10vh 5% 5vh 5%;
+      background-color: #ffffff;
+    }
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .about-title {
+      font-size: 3em;
+      margin-bottom: 2em;
+      text-align: center;
+    }
+    .about-text {
+      font-size: 1.2em;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+    .about-text p {
+      margin-bottom: 1.5em;
+    }
+  </style>
+</head>
+<body class="about">
+  <nav class="navigation" role="navigation" aria-label="Global">
+    <button class="navigation__button" aria-expanded="false" aria-controls="navigation__list">Open Global Menu</button>
+    <ul class="navigation__list" id="navigation__list">
+      <li class="navigation__list__item"><a class="navigation__list__link" href="index.html">Home</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="about.html">About me</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="projects.html">Projects</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="https://drive.google.com/file/d/1Y_SWnv-EcBArNAymt__f9rGqgGLDeaaw/view?usp=sharing">Resume</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="mailto:ines.gbadamassi@edu.univ-paris13.fr">Contact</a></li>
+      <li class="navigation__list__item language-selector">
+        <a class="navigation__list__link language-toggle" href="#" onclick="return false;" data-lang="en">
+          en <span class="arrow-down">
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+        <ul class="language-dropdown">
+          <li><a href="#" onclick="changeLanguage('fr'); return false;">fr</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="content">
+    <section class="about-section" id="about">
+      <div class="about-content">
+        <div class="about-text">
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer aria-label="Footer">
+    <div class="footer__inner">
+      <small>&copy; 2025 Inès Gbadamassi</small>
+      <ul class="footer__social">
+        <!--  <li>
+          <a class="social-icon" href="#" target="_blank" rel="noopener noreferrer">
+            <figure class="twitter"></figure>
+            Twitter
+          </a>
+        </li>
+        <li>
+          <a class="social-icon" href="#" target="_blank" rel="noopener noreferrer">
+            <figure class="instagram"></figure>
+            Instagram
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </footer>
+  <div class="social">
+    <div class="social-links">
+      <a target="_blank" href="https://github.com/I2S9" class="github"><i class="fa fa-github"></i></a>
+      <a target="_blank" href="https://www.linkedin.com/in/ines-gbadamassi/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      <a target="_blank" href="https://www.strava.com/athletes/144168481" class="strava"><img src="images/strava.svg" alt="Strava" style="width: 20px; height: 20px;" /></a>
+    </div>
+    <div class="vl"></div>
+  </div>
+  <div class="sticky_email">
+    <div class="s_email">
+      <a href="mailto:ines.gbadamassi@edu.univ-paris13.fr" class="email_s">ines.gbadamassi@edu.univ-paris13.fr</a>
+    </div>
+    <div class="vl"></div>
+  </div>
+  <script src="public/main.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script>
+    // Fonction pour changer la langue
+    function changeLanguage(lang) {
+      const languageToggle = document.querySelector('.language-toggle');
+      const languageDropdown = document.querySelector('.language-dropdown');
+      
+      // Mettre à jour la langue affichée
+      languageToggle.setAttribute('data-lang', lang);
+      languageToggle.innerHTML = lang + ' <span class="arrow-down"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+      
+      // Mettre à jour le menu déroulant pour afficher l'option opposée
+      const oppositeLang = lang === 'en' ? 'fr' : 'en';
+      languageDropdown.innerHTML = '<li><a href="#" onclick="changeLanguage(\'' + oppositeLang + '\'); return false;">' + oppositeLang + '</a></li>';
+    }
+  </script>
+</body>
+</html>
+
+

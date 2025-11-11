@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html class="projects" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base />
+  <title>My Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="public/head.js"></script>
+  <link rel="stylesheet" href="public/styles.css" />
+  <style>
+    /* Fond blanc pour toute la page */
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Articulat CF, system-ui, sans-serif;
+    }
+    /* Centrer la navbar */
+    .navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .navigation__list {
+      margin-left: 0 !important;
+    }
+    /* Rapprocher les éléments de la navbar */
+    .navigation__list__item {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .navigation__list__link {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+    }
+    /* Sélecteur de langue */
+    .language-selector {
+      position: relative;
+    }
+    /* Augmenter la taille de la police pour tous les éléments de la navbar */
+    .navigation__list__link {
+      font-size: 1.1em !important;
+      color: #000000 !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    /* Assurer que tous les éléments de la navbar sont visibles */
+    .navigation__list__item {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    .navigation__list {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+    /* S'assurer que les éléments de langue ont le même style de police que les autres éléments de la navbar */
+    .language-selector .navigation__list__link,
+    .language-toggle {
+      font-size: 1.1em !important;
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      color: #000000 !important;
+    }
+    /* Supprimer le contour blanc lors de la sélection/focus des éléments de la navbar */
+    .navigation__list__link:focus,
+    .navigation__list__link:active,
+    .language-toggle:focus,
+    .language-toggle:active {
+      outline: none !important;
+      -webkit-outline: none !important;
+      box-shadow: none !important;
+    }
+    .navigation__list__link::selection,
+    .language-toggle::selection {
+      background: transparent;
+    }
+    .language-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 8px;
+      padding: 8px 0;
+      margin-top: 4px;
+      min-width: 60px;
+      list-style: none;
+      z-index: 1000;
+    }
+    .language-selector:hover .language-dropdown,
+    .language-selector:focus-within .language-dropdown {
+      display: block;
+    }
+    .language-dropdown li {
+      margin: 0;
+      padding: 0;
+    }
+    .language-dropdown a {
+      display: block;
+      padding: 8px 18pt;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    .language-dropdown a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .arrow-down {
+      display: inline-flex;
+      align-items: center;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+    .arrow-down svg {
+      width: 10px;
+      height: 6px;
+    }
+    
+    /* Section Projects */
+    .projects-section {
+      min-height: 100vh;
+      padding: 15vh 5% 5vh 5%;
+      background-color: #ffffff;
+    }
+    .projects-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .projects-header {
+      text-align: center;
+      margin-bottom: 4vh;
+      padding-top: 3vh;
+    }
+    .projects-title {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-size: 42pt;
+      font-weight: 600;
+      letter-spacing: -0.75pt;
+      line-height: 1;
+      text-align: center;
+      color: #000;
+      margin-bottom: 0.5em;
+      display: block;
+    }
+    @media (max-width: 1199px) {
+      .projects-title {
+        font-size: 0.45in;
+      }
+    }
+    @media (max-width: 799px) {
+      .projects-title {
+        font-size: 1.3pc;
+      }
+    }
+    .projects-subtitle {
+      font-size: 1.2em;
+      color: #86868b;
+      margin-bottom: 2em;
+      font-weight: 400;
+      font-family: Articulat CF, system-ui, sans-serif;
+    }
+    
+    /* Filtres */
+    .projects-filters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 4vh;
+      flex-wrap: wrap;
+    }
+    .filter-button {
+      padding: 10px 24px;
+      border-radius: 50px;
+      border: none;
+      background-color: #ffffff;
+      color: #000000;
+      font-size: 1em;
+      font-weight: 500;
+      font-family: Articulat CF, system-ui, sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid #d1d1d6;
+    }
+    .filter-button:hover {
+      background-color: #f5f5f7;
+    }
+    .filter-button.active {
+      background-color: #000000;
+      color: #ffffff;
+      border-color: #000000;
+    }
+    
+    /* Grille de projets */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 2vh;
+    }
+    
+    /* Carte de projet */
+    .project-card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    .project-image-container {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background-color: #f5f5f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .project-card:hover .project-image {
+      transform: scale(1.05);
+    }
+    .project-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .project-title {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1d1d1f;
+      line-height: 1.2;
+      font-family: Articulat CF, system-ui, sans-serif;
+      text-align: left;
+      width: 100%;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .project-tag {
+      padding: 6px 14px;
+      border-radius: 50px;
+      background-color: #f5f5f7;
+      color: #86868b;
+      font-size: 0.85em;
+      font-weight: 500;
+      font-family: Articulat CF, system-ui, sans-serif;
+    }
+    .project-button {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 50px;
+      background-color: #000000;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 400;
+      font-family: Articulat CF, system-ui, sans-serif;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+      width: fit-content;
+      align-self: flex-start;
+    }
+    .project-button:hover {
+      background-color: #333333;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1199px) {
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+      }
+    }
+    @media (max-width: 799px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .projects-subtitle {
+        font-size: 1em;
+      }
+      .projects-filters {
+        gap: 10px;
+      }
+      .filter-button {
+        padding: 8px 18px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body class="projects">
+  <nav class="navigation" role="navigation" aria-label="Global">
+    <button class="navigation__button" aria-expanded="false" aria-controls="navigation__list">Open Global Menu</button>
+    <ul class="navigation__list" id="navigation__list">
+      <li class="navigation__list__item"><a class="navigation__list__link" href="index.html">Home</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="about.html">About me</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="projects.html">Projects</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="https://drive.google.com/file/d/1Y_SWnv-EcBArNAymt__f9rGqgGLDeaaw/view?usp=sharing">Resume</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="mailto:ines.gbadamassi@edu.univ-paris13.fr">Contact</a></li>
+      <li class="navigation__list__item language-selector">
+        <a class="navigation__list__link language-toggle" href="#" onclick="return false;" data-lang="en">
+          en <span class="arrow-down">
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+        <ul class="language-dropdown">
+          <li><a href="#" onclick="changeLanguage('fr'); return false;">fr</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="content">
+    <section class="projects-section" id="projects">
+      <div class="projects-content">
+        <div class="projects-header">
+          <h1 class="projects-title">My Projects</h1>
+          <p class="projects-subtitle">Let's take a look at my projects...</p>
+        </div>
+        
+        <div class="projects-filters">
+          <button class="filter-button active" data-filter="all">All</button>
+          <button class="filter-button" data-filter="ai-ml">AI/ML</button>
+          <button class="filter-button" data-filter="data">Data</button>
+          <button class="filter-button" data-filter="research">Research</button>
+          <button class="filter-button" data-filter="hackathon">Hackathon</button>
+          <button class="filter-button" data-filter="school">School</button>
+          <button class="filter-button" data-filter="web">Web</button>
+          <button class="filter-button" data-filter="ux-ui">UX/UI</button>
+        </div>
+        
+        <div class="projects-grid" id="projectsGrid">
+          <!-- EcoAdventures -->
+          <div class="project-card" data-category="ux-ui">
+            <div class="project-image-container">
+              <img src="images/projects/EcoAdventures.png" alt="EcoAdventures" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">EcoAdventures</h3>
+              <div class="project-tags">
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">UX/UI</span>
+                <span class="project-tag">Mobile App</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- MoodQuest -->
+          <div class="project-card" data-category="ux-ui">
+            <div class="project-image-container">
+              <img src="images/projects/MoodQuest.png" alt="MoodQuest" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">MoodQuest</h3>
+              <div class="project-tags">
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">UX/UI</span>
+                <span class="project-tag">Mobile App</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- OOTD -->
+          <div class="project-card" data-category="ux-ui">
+            <div class="project-image-container">
+              <img src="images/projects/OOTD.png" alt="OOTD" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">OOTD</h3>
+              <div class="project-tags">
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">UX/UI</span>
+                <span class="project-tag">Mobile App</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- CommuniLearn -->
+          <div class="project-card" data-category="ux-ui">
+            <div class="project-image-container">
+              <img src="images/projects/CommuniLearn.png" alt="CommuniLearn" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">CommuniLearn</h3>
+              <div class="project-tags">
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">UX/UI</span>
+                <span class="project-tag">Mobile App</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- ShadowGuard -->
+          <div class="project-card" data-category="ux-ui">
+            <div class="project-image-container">
+              <img src="images/projects/ShadowGuard.png" alt="ShadowGuard" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">ShadowGuard</h3>
+              <div class="project-tags">
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">UX/UI</span>
+                <span class="project-tag">Mobile App</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- Ecobite -->
+          <div class="project-card" data-category="ux-ui">
+            <div class="project-image-container">
+              <img src="images/projects/Ecobite.png" alt="Ecobite" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">EcoBite</h3>
+              <div class="project-tags">
+                <span class="project-tag">Figma</span>
+                <span class="project-tag">UX/UI</span>
+                <span class="project-tag">Mobile App</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- Minishell -->
+          <div class="project-card" data-category="school">
+            <div class="project-image-container">
+              <img src="images/projects/Minishell.png" alt="Minishell" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Minishell</h3>
+              <div class="project-tags">
+                <span class="project-tag">C</span>
+                <span class="project-tag">Shell</span>
+                <span class="project-tag">School</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- IntelliLearn -->
+          <div class="project-card" data-category="ai-ml">
+            <div class="project-image-container">
+              <img src="images/projects/IntelliLearn.png" alt="IntelliLearn" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">IntelliLearn</h3>
+              <div class="project-tags">
+                <span class="project-tag">AI/ML</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Education</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- MemorAIze -->
+          <div class="project-card" data-category="ai-ml">
+            <div class="project-image-container">
+              <img src="images/projects/MemorAIze.png" alt="MemorAIze" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">MemorAIze</h3>
+              <div class="project-tags">
+                <span class="project-tag">AI/ML</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">NLP</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- Fashion class classification -->
+          <div class="project-card" data-category="ai-ml data">
+            <div class="project-image-container">
+              <img src="images/projects/Fashion class classification.png" alt="Fashion Classification" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Fashion Classification</h3>
+              <div class="project-tags">
+                <span class="project-tag">AI/ML</span>
+                <span class="project-tag">Data</span>
+                <span class="project-tag">Computer Vision</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- TrustMedChain -->
+          <div class="project-card" data-category="hackathon">
+            <div class="project-image-container">
+              <img src="images/projects/TrustMedChain.png" alt="TrustMedChain" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">TrustMedChain</h3>
+              <div class="project-tags">
+                <span class="project-tag">Blockchain</span>
+                <span class="project-tag">Hackathon</span>
+                <span class="project-tag">Web3</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- Halloween -->
+          <div class="project-card" data-category="hackathon web">
+            <div class="project-image-container">
+              <img src="images/projects/Halloween.png" alt="Halloween" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Halloween</h3>
+              <div class="project-tags">
+                <span class="project-tag">Hackathon</span>
+                <span class="project-tag">Game</span>
+                <span class="project-tag">Web</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+          
+          <!-- Task-optimisation-problem -->
+          <div class="project-card" data-category="research data">
+            <div class="project-image-container">
+              <img src="images/projects/Task-optimisation-problem.gif" alt="Task Optimization" class="project-image" />
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Task Optimization</h3>
+              <div class="project-tags">
+                <span class="project-tag">Research</span>
+                <span class="project-tag">Data</span>
+                <span class="project-tag">Optimization</span>
+              </div>
+              <a href="#" class="project-button">See more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer aria-label="Footer">
+    <div class="footer__inner">
+      <small>&copy; 2025 Inès Gbadamassi</small>
+      <ul class="footer__social">
+      </ul>
+    </div>
+  </footer>
+  <div class="social">
+    <div class="social-links">
+      <a target="_blank" href="https://github.com/I2S9" class="github"><i class="fa fa-github"></i></a>
+      <a target="_blank" href="https://www.linkedin.com/in/ines-gbadamassi/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      <a target="_blank" href="https://www.strava.com/athletes/144168481" class="strava"><img src="images/strava.svg" alt="Strava" style="width: 20px; height: 20px;" /></a>
+    </div>
+    <div class="vl"></div>
+  </div>
+  <div class="sticky_email">
+    <div class="s_email">
+      <a href="mailto:ines.gbadamassi@edu.univ-paris13.fr" class="email_s">ines.gbadamassi@edu.univ-paris13.fr</a>
+    </div>
+    <div class="vl"></div>
+  </div>
+  <script src="public/main.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script>
+    // Fonction pour changer la langue
+    function changeLanguage(lang) {
+      const languageToggle = document.querySelector('.language-toggle');
+      const languageDropdown = document.querySelector('.language-dropdown');
+      
+      // Mettre à jour la langue affichée
+      languageToggle.setAttribute('data-lang', lang);
+      languageToggle.innerHTML = lang + ' <span class="arrow-down"><svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+      
+      // Mettre à jour le menu déroulant pour afficher l'option opposée
+      const oppositeLang = lang === 'en' ? 'fr' : 'en';
+      languageDropdown.innerHTML = '<li><a href="#" onclick="changeLanguage(\'' + oppositeLang + '\'); return false;">' + oppositeLang + '</a></li>';
+    }
+    
+    // Fonction de filtrage des projets
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-button');
+      const projectCards = document.querySelectorAll('.project-card');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Retirer la classe active de tous les boutons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          // Ajouter la classe active au bouton cliqué
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter');
+          
+          // Filtrer les projets
+          projectCards.forEach(card => {
+            if (filter === 'all') {
+              card.style.display = 'flex';
+            } else {
+              const categories = card.getAttribute('data-category').split(' ');
+              if (categories.includes(filter)) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
