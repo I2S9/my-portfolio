@@ -120,17 +120,17 @@
     /* Section About Me */
     .about-section {
       min-height: 100vh;
-      padding: 15vh 0 5vh 0;
+      padding: 20vh 0 5vh 0;
       background-color: #ffffff;
     }
     @media (max-width: 1200px) {
       .about-section {
-        padding: 20vh 0 5vh 0;
+        padding: 25vh 0 5vh 0;
       }
     }
     @media (max-width: 768px) {
       .about-section {
-        padding: 18vh 0 5vh 0;
+        padding: 22vh 0 5vh 0;
       }
     }
     .about-content {
@@ -401,6 +401,134 @@
       border-radius: 8px;
       cursor: pointer;
     }
+    /* Section Sport */
+    .sport-section {
+      width: 100%;
+      padding: 8vh 5%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .sport-title {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 2.5em;
+      color: #000000;
+      text-align: center;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin: 0 auto 4vh auto;
+      max-width: 900px;
+    }
+    .sport-images {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .sport-image {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sport-image:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    .sport-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+    @media (max-width: 768px) {
+      .sport-title {
+        font-size: 2em;
+        margin-bottom: 3vh;
+      }
+      .sport-images {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .sport-image {
+        min-width: 100%;
+        max-width: 100%;
+      }
+    }
+    /* Section Stats Bandeau */
+    .stats-banner {
+      width: 100%;
+      background-color: #e6f2ff;
+      padding: 3vh 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .stats-banner-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+    .stats-banner-content {
+      display: flex;
+      gap: 60px;
+      animation: scroll-stats 30s linear infinite;
+      white-space: nowrap;
+      width: fit-content;
+    }
+    .stats-banner-content:hover {
+      animation-play-state: paused;
+    }
+    .stat-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-size: 1.2em;
+      color: #000000;
+      flex-shrink: 0;
+    }
+    .stat-value {
+      font-weight: 600;
+      font-size: 1.3em;
+    }
+    .stat-label {
+      font-weight: 400;
+    }
+    @keyframes scroll-stats {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .stats-banner-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(to right, transparent, #e6f2ff);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .stats-banner-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(to left, transparent, #e6f2ff);
+      pointer-events: none;
+      z-index: 1;
+    }
     @media (max-width: 768px) {
       .about-content {
         flex-direction: column;
@@ -517,7 +645,7 @@
         </div>
       </div>
       <h2 class="extracurricular-title">Extracurricular Activities</h2>
-      <p class="crig-intro">I love creating things, robotics, innovation, and I am actively involved in my school's robotics club. I participated in the Coupe de France de Robotique 2025, where over several months, my team and I developed and built robots together.</p>
+      <p class="crig-intro">I love learning and creating things, and I am actively involved in my school's robotics club. I participated in the Coupe de France de Robotique 2025, where over several months, my team and I developed and built robots together.</p>
       <div class="crig-section">
         <div class="crig-polaroid-img crig-polaroid-1">
           <img src="images/bot-pami-crig.jpg" alt="CRIG Bot PAMI" />
@@ -535,7 +663,7 @@
     </section>
     <section class="currently-learning">
       <div class="currently-learning-content">
-        <h2 class="currently-learning-title">Currently I am Learning</h2>
+        <h2 class="currently-learning-title">Currently I am Learning...</h2>
         <div class="currently-learning-grid">
           <div class="currently-learning-texts">
             <div class="currently-learning-column">
@@ -551,6 +679,125 @@
             <a href="https://www.duolingo.com/profile/inessssssss9" target="_blank" rel="noopener noreferrer">
               <img src="images/duolingo-streak.png" alt="Duolingo streak" />
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sport-section">
+      <h2 class="sport-title">I am a sports person who loves training</h2>
+      <div class="sport-images">
+        <div class="sport-image">
+          <img src="images/medailles.jpg" alt="Medals" />
+        </div>
+        <div class="sport-image">
+          <img src="images/salle.jpg" alt="Gym" />
+        </div>
+        <div class="sport-image">
+          <img src="images/run-pics-strava.png" alt="Running Strava" />
+        </div>
+        <div class="sport-image">
+          <img src="images/semi-marathon.JPG" alt="Semi Marathon" />
+        </div>
+      </div>
+    </section>
+    <section class="stats-banner">
+      <div class="stats-banner-wrapper">
+        <div class="stats-banner-content">
+          <div class="stat-item">
+            <span class="stat-value">20.26 km</span>
+            <span class="stat-label">Distance</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5:37 /km</span>
+            <span class="stat-label">Pace</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">1h 53m</span>
+            <span class="stat-label">Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">1581</span>
+            <span class="stat-label">Race Number</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">Run 21 km</span>
+            <span class="stat-label">09/11/25</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">21.02 km</span>
+            <span class="stat-label">Distance</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">6:02 /km</span>
+            <span class="stat-label">Pace</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">2h 6m</span>
+            <span class="stat-label">Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">Run matinal</span>
+            <span class="stat-label">07/11/25</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">10.00 km</span>
+            <span class="stat-label">Distance</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5:53 /km</span>
+            <span class="stat-label">Pace</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">58m 52s</span>
+            <span class="stat-label">Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">20.26 km</span>
+            <span class="stat-label">Distance</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5:37 /km</span>
+            <span class="stat-label">Pace</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">1h 53m</span>
+            <span class="stat-label">Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">1581</span>
+            <span class="stat-label">Race Number</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">Run 21 km</span>
+            <span class="stat-label">09/11/25</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">21.02 km</span>
+            <span class="stat-label">Distance</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">6:02 /km</span>
+            <span class="stat-label">Pace</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">2h 6m</span>
+            <span class="stat-label">Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">Run matinal</span>
+            <span class="stat-label">07/11/25</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">10.00 km</span>
+            <span class="stat-label">Distance</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5:53 /km</span>
+            <span class="stat-label">Pace</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">58m 52s</span>
+            <span class="stat-label">Time</span>
           </div>
         </div>
       </div>
