@@ -187,6 +187,220 @@
       letter-spacing: -0.5px;
       line-height: 1;
     }
+    /* Section CRIG avec images polaroid */
+    .crig-section {
+      position: relative;
+      width: 100%;
+      min-height: 60vh;
+      padding: 5vh 2% 10vh 2%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: #ffffff;
+    }
+    .crig-section-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 100%;
+    }
+    /* Logo CRIG en arrière-plan transparent */
+    .crig-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 15%;
+      transform: translateY(-50%);
+      width: 400px;
+      height: 400px;
+      background-image: url('images/logo-crig.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.15;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .crig-section > * {
+      position: relative;
+      z-index: 1;
+    }
+    .crig-intro {
+      text-align: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #000000;
+      margin: 0 auto 4vh auto;
+      max-width: 800px;
+      padding: 0 5%;
+      position: relative;
+      z-index: 1;
+    }
+    .crig-polaroid-img {
+      position: absolute;
+      width: auto;
+      height: auto;
+      max-width: 300px;
+      display: block;
+      border-radius: 0 !important;
+      -webkit-border-radius: 0 !important;
+      -moz-border-radius: 0 !important;
+      filter: none !important;
+      -webkit-filter: none !important;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
+      -webkit-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
+      -moz-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25) !important;
+      border: none !important;
+      outline: none !important;
+      padding: 15px 15px 50px 15px;
+      background-color: white;
+      box-sizing: border-box;
+      opacity: 1;
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+    }
+    .crig-polaroid-img.visible {
+      opacity: 1;
+    }
+    .crig-polaroid-img:hover {
+      z-index: 100 !important;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4) !important;
+      transform: translateY(-5px) rotate(var(--rotation, 0deg)) !important;
+      transition: z-index 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
+    }
+    .crig-polaroid-1:hover {
+      transform: translateY(-5px) rotate(-8deg) !important;
+    }
+    .crig-polaroid-2:hover {
+      transform: translateY(-5px) rotate(5deg) !important;
+    }
+    .crig-polaroid-3:hover {
+      transform: translateY(-5px) rotate(-3deg) !important;
+    }
+    .crig-polaroid-4:hover {
+      transform: translateY(-5px) rotate(7deg) !important;
+    }
+    .crig-polaroid-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0 !important;
+    }
+    /* Taille spécifique pour les images du centre (2 et 3) */
+    .crig-polaroid-2,
+    .crig-polaroid-3 {
+      max-width: 250px;
+    }
+    /* Taille agrandie pour crig-squad (4) */
+    .crig-polaroid-4 {
+      max-width: 350px;
+    }
+    .crig-polaroid-1 {
+      left: 8%;
+      top: 15%;
+      z-index: 1;
+      transform: translateY(30px) rotate(-8deg);
+    }
+    .crig-polaroid-1.visible {
+      transform: translateY(0) rotate(-8deg);
+    }
+    .crig-polaroid-2 {
+      left: 20%;
+      top: 18%;
+      z-index: 2;
+      transform: translateY(30px) rotate(5deg);
+    }
+    .crig-polaroid-2.visible {
+      transform: translateY(0) rotate(5deg);
+    }
+    .crig-polaroid-3 {
+      left: 32%;
+      top: 15%;
+      z-index: 3;
+      transform: translateY(30px) rotate(-3deg);
+    }
+    .crig-polaroid-3.visible {
+      transform: translateY(0) rotate(-3deg);
+    }
+    .crig-polaroid-4 {
+      left: 44%;
+      top: 18%;
+      z-index: 4;
+      transform: translateY(30px) rotate(7deg);
+    }
+    .crig-polaroid-4.visible {
+      transform: translateY(0) rotate(7deg);
+    }
+    /* Section Currently Learning */
+    .currently-learning {
+      width: 100%;
+      background-color: #fff9e6;
+      padding: 4vh 5%;
+      margin-top: 8vh;
+    }
+    .currently-learning-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .currently-learning-title {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 2.5em;
+      color: #000000;
+      margin: 0 auto 6vh auto;
+      text-align: center;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .currently-learning-grid {
+      display: flex;
+      gap: 60px;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .currently-learning-texts {
+      flex: 1;
+      display: flex;
+      gap: 60px;
+    }
+    .currently-learning-column {
+      flex: 1;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #000000;
+      text-align: left;
+    }
+    .currently-learning-column h3 {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.5em;
+      color: #000000;
+      margin-bottom: 1em;
+    }
+    .currently-learning-column p {
+      margin-bottom: 1em;
+    }
+    .currently-learning-image {
+      flex: 0 0 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .currently-learning-image a {
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .currently-learning-image a:hover {
+      transform: scale(1.05);
+    }
+    .currently-learning-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      cursor: pointer;
+    }
     @media (max-width: 768px) {
       .about-content {
         flex-direction: column;
@@ -194,6 +408,76 @@
       }
       .about-text {
         text-align: center;
+      }
+      .currently-learning {
+        padding: 3vh 5%;
+      }
+      .currently-learning-title {
+        font-size: 2em;
+        margin-bottom: 2vh;
+      }
+      .currently-learning-grid {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .currently-learning-texts {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .currently-learning-column {
+        font-size: 1em;
+        text-align: center;
+      }
+      .currently-learning-image {
+        flex: 1;
+        max-width: 100%;
+      }
+      .crig-section::before {
+        width: 250px;
+        height: 250px;
+        right: 10%;
+      }
+      .crig-polaroid-img {
+        max-width: 180px;
+      }
+      .crig-polaroid-2,
+      .crig-polaroid-3 {
+        max-width: 150px;
+      }
+      .crig-polaroid-4 {
+        max-width: 200px;
+      }
+      .crig-polaroid-1 { 
+        left: 3%; 
+        top: 10%; 
+        transform: translateY(30px) rotate(-8deg);
+      }
+      .crig-polaroid-1.visible {
+        transform: translateY(0) rotate(-8deg);
+      }
+      .crig-polaroid-2 { 
+        left: 15%; 
+        top: 13%; 
+        transform: translateY(30px) rotate(5deg);
+      }
+      .crig-polaroid-2.visible {
+        transform: translateY(0) rotate(5deg);
+      }
+      .crig-polaroid-3 { 
+        left: 27%; 
+        top: 10%; 
+        transform: translateY(30px) rotate(-3deg);
+      }
+      .crig-polaroid-3.visible {
+        transform: translateY(0) rotate(-3deg);
+      }
+      .crig-polaroid-4 { 
+        left: 39%; 
+        top: 13%; 
+        transform: translateY(30px) rotate(7deg);
+      }
+      .crig-polaroid-4.visible {
+        transform: translateY(0) rotate(7deg);
       }
     }
   </style>
@@ -233,6 +517,43 @@
         </div>
       </div>
       <h2 class="extracurricular-title">Extracurricular Activities</h2>
+      <p class="crig-intro">I love creating things, robotics, innovation, and I am actively involved in my school's robotics club. I participated in the Coupe de France de Robotique 2025, where over several months, my team and I developed and built robots together.</p>
+      <div class="crig-section">
+        <div class="crig-polaroid-img crig-polaroid-1">
+          <img src="images/bot-pami-crig.jpg" alt="CRIG Bot PAMI" />
+        </div>
+        <div class="crig-polaroid-img crig-polaroid-2">
+          <img src="images/crig-presentation.jpg" alt="CRIG Presentation" />
+        </div>
+        <div class="crig-polaroid-img crig-polaroid-3">
+          <img src="images/crig-cdf.jpg" alt="CRIG CDF" />
+        </div>
+        <div class="crig-polaroid-img crig-polaroid-4">
+          <img src="images/crig-squad.jpg" alt="CRIG Squad" />
+        </div>
+      </div>
+    </section>
+    <section class="currently-learning">
+      <div class="currently-learning-content">
+        <h2 class="currently-learning-title">Currently I am Learning</h2>
+        <div class="currently-learning-grid">
+          <div class="currently-learning-texts">
+            <div class="currently-learning-column">
+              <h3>🇨🇳 Chinese</h3>
+              <p>I've started learning Chinese as I'm deeply interested in Asian culture, particularly Chinese traditions and language.</p>
+            </div>
+            <div class="currently-learning-column">
+              <h3>🇮🇹 Italian</h3>
+              <p>I resumed studying Italian recently. My student job pushed me to learn Italian to interact more with clients, and I developed strong interest in languages.</p>
+            </div>
+          </div>
+          <div class="currently-learning-image">
+            <a href="https://www.duolingo.com/profile/inessssssss9" target="_blank" rel="noopener noreferrer">
+              <img src="images/duolingo-streak.png" alt="Duolingo streak" />
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer aria-label="Footer">
@@ -284,6 +605,25 @@
       const oppositeLang = lang === 'en' ? 'fr' : 'en';
       languageDropdown.innerHTML = '<li><a href="#" onclick="changeLanguage(\'' + oppositeLang + '\'); return false;">' + oppositeLang + '</a></li>';
     }
+    
+    // Animation des images polaroid CRIG - rendre toutes visibles immédiatement
+    function animateCrigPolaroids() {
+      const polaroids = document.querySelectorAll('.crig-polaroid-img');
+      
+      if (polaroids.length === 0) return;
+      
+      // Rendre toutes les images visibles immédiatement
+      polaroids.forEach((polaroid, index) => {
+        polaroid.classList.add('visible');
+        // Animation légère avec délai pour effet visuel
+        setTimeout(() => {
+          polaroid.style.opacity = '1';
+        }, index * 100);
+      });
+    }
+    
+    // Initialiser l'animation au chargement de la page
+    document.addEventListener('DOMContentLoaded', animateCrigPolaroids);
   </script>
 </body>
 </html>
