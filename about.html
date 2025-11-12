@@ -529,6 +529,29 @@
       pointer-events: none;
       z-index: 1;
     }
+    /* Section My Values */
+    .my-values-section {
+      width: 100%;
+      padding: 8vh 5%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .my-values-title {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 2.5em;
+      color: #000000;
+      text-align: center;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+    @media (max-width: 768px) {
+      .my-values-title {
+        font-size: 2em;
+      }
+    }
     @media (max-width: 768px) {
       .about-content {
         flex-direction: column;
@@ -801,6 +824,9 @@
           </div>
         </div>
       </div>
+    </section>
+    <section class="my-values-section">
+      <h2 class="my-values-title">My values</h2>
     </section>
   </main>
   <footer aria-label="Footer">
