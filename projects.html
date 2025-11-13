@@ -171,7 +171,7 @@
       flex-wrap: wrap;
     }
     .filter-button {
-      padding: 10px 24px;
+      padding: 8px 24px;
       border-radius: 50px;
       border: none;
       background-color: #ffffff;
@@ -263,6 +263,12 @@
       font-weight: 500;
       font-family: Articulat CF, system-ui, sans-serif;
     }
+    .project-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
     .project-button {
       display: inline-block;
       padding: 10px 18px;
@@ -275,12 +281,35 @@
       font-family: Articulat CF, system-ui, sans-serif;
       text-align: center;
       transition: background-color 0.3s ease;
-      margin-top: auto;
       width: fit-content;
+      margin-top: auto;
       align-self: flex-start;
+    }
+    .project-buttons .project-button {
+      margin-top: 0;
+      align-self: auto;
     }
     .project-button:hover {
       background-color: #333333;
+    }
+    .project-button-secondary {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 50px;
+      background-color: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 400;
+      font-family: Articulat CF, system-ui, sans-serif;
+      text-align: center;
+      transition: all 0.3s ease;
+      width: fit-content;
+      border: 1px solid #d1d1d6;
+    }
+    .project-button-secondary:hover {
+      background-color: #f5f5f7;
+      border-color: #000000;
     }
     
     /* Responsive */
@@ -302,7 +331,7 @@
         gap: 10px;
       }
       .filter-button {
-        padding: 8px 18px;
+        padding: 6px 18px;
         font-size: 0.9em;
       }
     }
@@ -362,7 +391,10 @@
                 <span class="project-tag">UX/UI</span>
                 <span class="project-tag">Mobile App</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://devpost.com/software/ecoadventures" class="project-button" target="_blank">See more</a>
+                <a href="https://www.figma.com/proto/F8Y20NYFwFUB2ySS9mnbSj/EcoAdventures?node-id=287-251&node-type=frame&t=mdPXoJrHVCyhCuk1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=287%3A251" class="project-button-secondary" target="_blank">View on Figma</a>
+              </div>
             </div>
           </div>
           
@@ -378,7 +410,10 @@
                 <span class="project-tag">UX/UI</span>
                 <span class="project-tag">Mobile App</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://devpost.com/software/moodquest" class="project-button" target="_blank">See more</a>
+                <a href="https://www.figma.com/proto/AZiOo3P1z0ARFTXY0l94OE/MoodQuest?node-id=1-2&starting-point-node-id=1%3A2&t=iyo03qR1I7TEnl54-1" class="project-button-secondary" target="_blank">View on Figma</a>
+              </div>
             </div>
           </div>
           
@@ -394,7 +429,10 @@
                 <span class="project-tag">UX/UI</span>
                 <span class="project-tag">Mobile App</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://devpost.com/software/ootd-y7a4ic" class="project-button" target="_blank">See more</a>
+                <a href="https://www.figma.com/proto/IlajzT5s55GTN9yE36aXGl/OOTD?node-id=7-14&node-type=canvas&t=LkufqqtGAmcrnbBl-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=7%3A14" class="project-button-secondary" target="_blank">View on Figma</a>
+              </div>
             </div>
           </div>
           
@@ -410,7 +448,10 @@
                 <span class="project-tag">UX/UI</span>
                 <span class="project-tag">Mobile App</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://devpost.com/software/communilearn" class="project-button" target="_blank">See more</a>
+                <a href="https://www.figma.com/proto/AobhAGKzCdVkaPNV6WCK4j/CommuniLearn?node-id=211-1259&node-type=canvas&t=FaLhEYpDIOxDAVzr-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=211%3A1259" class="project-button-secondary" target="_blank">View on Figma</a>
+              </div>
             </div>
           </div>
           
@@ -426,7 +467,10 @@
                 <span class="project-tag">UX/UI</span>
                 <span class="project-tag">Mobile App</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://devpost.com/software/shadowguard" class="project-button" target="_blank">See more</a>
+                <a href="https://www.figma.com/proto/sG4CILCfOzcBxUz4bE3No7/ShadowGuard?node-id=4-920&t=QdhvWHBac1krdzs5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A920" class="project-button-secondary" target="_blank">View on Figma</a>
+              </div>
             </div>
           </div>
           
@@ -442,7 +486,10 @@
                 <span class="project-tag">UX/UI</span>
                 <span class="project-tag">Mobile App</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://devpost.com/software/ecobite-j5ekl1" class="project-button" target="_blank">See more</a>
+                <a href="https://www.figma.com/proto/O2DpVGAyI92fqLipmr9zvX/EcoBite?node-id=56-565&node-type=frame&t=FkwAADhC5lTa6wi5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=56%3A565" class="project-button-secondary" target="_blank">View on Figma</a>
+              </div>
             </div>
           </div>
           
@@ -458,7 +505,9 @@
                 <span class="project-tag">Shell</span>
                 <span class="project-tag">School</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://github.com/I2S9/Minishell" class="project-button" target="_blank">View on Github</a>
+              </div>
             </div>
           </div>
           
@@ -474,7 +523,10 @@
                 <span class="project-tag">Python</span>
                 <span class="project-tag">Education</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://devpost.com/software/intelli-learn-thmxyr" class="project-button" target="_blank">See more</a>
+                <a href="https://github.com/sapphiregaze/Intelli-Learn" class="project-button-secondary" target="_blank">View on Github</a>
+              </div>
             </div>
           </div>
           
@@ -490,7 +542,10 @@
                 <span class="project-tag">Python</span>
                 <span class="project-tag">NLP</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://memoraizeapp.vercel.app/" class="project-button" target="_blank">See more</a>
+                <a href="https://github.com/I2S9/MemorAIze" class="project-button-secondary" target="_blank">View on Github</a>
+              </div>
             </div>
           </div>
           
@@ -506,7 +561,9 @@
                 <span class="project-tag">Data</span>
                 <span class="project-tag">Computer Vision</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://github.com/I2S9/Fashion-class-classification" class="project-button" target="_blank">View on Github</a>
+              </div>
             </div>
           </div>
           
@@ -522,7 +579,7 @@
                 <span class="project-tag">Hackathon</span>
                 <span class="project-tag">Web3</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <a href="https://devpost.com/software/trustmedchain" class="project-button" target="_blank">See more</a>
             </div>
           </div>
           
@@ -538,7 +595,10 @@
                 <span class="project-tag">Game</span>
                 <span class="project-tag">Web</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://devpost.com/software/halloween-gj9tnm" class="project-button" target="_blank">See more</a>
+                <a href="https://github.com/I2S9/Halloween" class="project-button-secondary" target="_blank">View on Github</a>
+              </div>
             </div>
           </div>
           
@@ -554,7 +614,9 @@
                 <span class="project-tag">Data</span>
                 <span class="project-tag">Optimization</span>
               </div>
-              <a href="#" class="project-button">See more</a>
+              <div class="project-buttons">
+                <a href="https://github.com/I2S9/Task-placement-in-multi-processor-system" class="project-button" target="_blank">View on Github</a>
+              </div>
             </div>
           </div>
         </div>
