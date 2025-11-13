@@ -331,6 +331,24 @@
     .project-button-secondary:hover .github-icon {
       fill: #000000;
     }
+    .figma-icon {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+    .project-button .figma-icon {
+      color: #ffffff;
+    }
+    .project-button-secondary .figma-icon {
+      color: #86868b;
+    }
+    .project-button-secondary:hover .figma-icon {
+      color: #000000;
+    }
+    a:has(.figma-icon) {
+      gap: 6px;
+      padding-left: 14px;
+    }
     
     /* Responsive */
     @media (max-width: 1199px) {
@@ -413,7 +431,12 @@
               </div>
               <div class="project-buttons">
                 <a href="https://devpost.com/software/ecoadventures" class="project-button" target="_blank">See more</a>
-                <a href="https://www.figma.com/proto/F8Y20NYFwFUB2ySS9mnbSj/EcoAdventures?node-id=287-251&node-type=frame&t=mdPXoJrHVCyhCuk1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=287%3A251" class="project-button-secondary" target="_blank">View on Figma</a>
+                <a href="https://www.figma.com/proto/F8Y20NYFwFUB2ySS9mnbSj/EcoAdventures?node-id=287-251&node-type=frame&t=mdPXoJrHVCyhCuk1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=287%3A251" class="project-button-secondary" target="_blank">
+                  <svg class="figma-icon" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M162.721 168.408C144.991 168.408 130.618 182.776 130.618 200.5C130.618 218.224 144.991 232.592 162.721 232.592H195.691V200.5V168.408H162.721ZM243.412 152.796L244.279 152.796C262.009 152.796 276.382 138.428 276.382 120.704C276.382 102.98 262.009 88.6122 244.279 88.6122H211.309V152.796L243.412 152.796ZM270.448 160.602C283.429 152.077 292 137.391 292 120.704C292 94.3578 270.635 73 244.279 73H211.309H203.5H195.691H162.721C136.365 73 115 94.3578 115 120.704C115 137.391 123.571 152.077 136.552 160.602C123.571 169.128 115 183.813 115 200.5C115 217.187 123.571 231.872 136.552 240.398C123.571 248.923 115 263.609 115 280.296C115 306.697 136.636 328 162.936 328C189.476 328 211.309 306.503 211.309 279.862V248.204V240.398V235.796C219.785 243.505 231.05 248.204 243.412 248.204H244.279C270.635 248.204 292 226.846 292 200.5C292 183.813 283.429 169.128 270.448 160.602ZM244.279 168.408L243.412 168.408C225.682 168.408 211.309 182.776 211.309 200.5C211.309 218.224 225.682 232.592 243.412 232.592H244.279C262.009 232.592 276.382 218.224 276.382 200.5C276.382 182.776 262.009 168.408 244.279 168.408ZM130.618 280.296C130.618 262.572 144.991 248.204 162.721 248.204H195.691V279.862C195.691 297.771 180.961 312.388 162.936 312.388C145.151 312.388 130.618 297.965 130.618 280.296ZM195.691 152.796H162.721C144.991 152.796 130.618 138.428 130.618 120.704C130.618 102.98 144.991 88.6122 162.721 88.6122H195.691V152.796Z" fill="currentColor"/>
+                  </svg>
+                  View on Figma
+                </a>
               </div>
             </div>
           </div>
@@ -432,7 +455,12 @@
               </div>
               <div class="project-buttons">
                 <a href="https://devpost.com/software/moodquest" class="project-button" target="_blank">See more</a>
-                <a href="https://www.figma.com/proto/AZiOo3P1z0ARFTXY0l94OE/MoodQuest?node-id=1-2&starting-point-node-id=1%3A2&t=iyo03qR1I7TEnl54-1" class="project-button-secondary" target="_blank">View on Figma</a>
+                <a href="https://www.figma.com/proto/AZiOo3P1z0ARFTXY0l94OE/MoodQuest?node-id=1-2&starting-point-node-id=1%3A2&t=iyo03qR1I7TEnl54-1" class="project-button-secondary" target="_blank">
+                  <svg class="figma-icon" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M162.721 168.408C144.991 168.408 130.618 182.776 130.618 200.5C130.618 218.224 144.991 232.592 162.721 232.592H195.691V200.5V168.408H162.721ZM243.412 152.796L244.279 152.796C262.009 152.796 276.382 138.428 276.382 120.704C276.382 102.98 262.009 88.6122 244.279 88.6122H211.309V152.796L243.412 152.796ZM270.448 160.602C283.429 152.077 292 137.391 292 120.704C292 94.3578 270.635 73 244.279 73H211.309H203.5H195.691H162.721C136.365 73 115 94.3578 115 120.704C115 137.391 123.571 152.077 136.552 160.602C123.571 169.128 115 183.813 115 200.5C115 217.187 123.571 231.872 136.552 240.398C123.571 248.923 115 263.609 115 280.296C115 306.697 136.636 328 162.936 328C189.476 328 211.309 306.503 211.309 279.862V248.204V240.398V235.796C219.785 243.505 231.05 248.204 243.412 248.204H244.279C270.635 248.204 292 226.846 292 200.5C292 183.813 283.429 169.128 270.448 160.602ZM244.279 168.408L243.412 168.408C225.682 168.408 211.309 182.776 211.309 200.5C211.309 218.224 225.682 232.592 243.412 232.592H244.279C262.009 232.592 276.382 218.224 276.382 200.5C276.382 182.776 262.009 168.408 244.279 168.408ZM130.618 280.296C130.618 262.572 144.991 248.204 162.721 248.204H195.691V279.862C195.691 297.771 180.961 312.388 162.936 312.388C145.151 312.388 130.618 297.965 130.618 280.296ZM195.691 152.796H162.721C144.991 152.796 130.618 138.428 130.618 120.704C130.618 102.98 144.991 88.6122 162.721 88.6122H195.691V152.796Z" fill="currentColor"/>
+                  </svg>
+                  View on Figma
+                </a>
               </div>
             </div>
           </div>
@@ -451,7 +479,12 @@
               </div>
               <div class="project-buttons">
                 <a href="https://devpost.com/software/ootd-y7a4ic" class="project-button" target="_blank">See more</a>
-                <a href="https://www.figma.com/proto/IlajzT5s55GTN9yE36aXGl/OOTD?node-id=7-14&node-type=canvas&t=LkufqqtGAmcrnbBl-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=7%3A14" class="project-button-secondary" target="_blank">View on Figma</a>
+                <a href="https://www.figma.com/proto/IlajzT5s55GTN9yE36aXGl/OOTD?node-id=7-14&node-type=canvas&t=LkufqqtGAmcrnbBl-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=7%3A14" class="project-button-secondary" target="_blank">
+                  <svg class="figma-icon" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M162.721 168.408C144.991 168.408 130.618 182.776 130.618 200.5C130.618 218.224 144.991 232.592 162.721 232.592H195.691V200.5V168.408H162.721ZM243.412 152.796L244.279 152.796C262.009 152.796 276.382 138.428 276.382 120.704C276.382 102.98 262.009 88.6122 244.279 88.6122H211.309V152.796L243.412 152.796ZM270.448 160.602C283.429 152.077 292 137.391 292 120.704C292 94.3578 270.635 73 244.279 73H211.309H203.5H195.691H162.721C136.365 73 115 94.3578 115 120.704C115 137.391 123.571 152.077 136.552 160.602C123.571 169.128 115 183.813 115 200.5C115 217.187 123.571 231.872 136.552 240.398C123.571 248.923 115 263.609 115 280.296C115 306.697 136.636 328 162.936 328C189.476 328 211.309 306.503 211.309 279.862V248.204V240.398V235.796C219.785 243.505 231.05 248.204 243.412 248.204H244.279C270.635 248.204 292 226.846 292 200.5C292 183.813 283.429 169.128 270.448 160.602ZM244.279 168.408L243.412 168.408C225.682 168.408 211.309 182.776 211.309 200.5C211.309 218.224 225.682 232.592 243.412 232.592H244.279C262.009 232.592 276.382 218.224 276.382 200.5C276.382 182.776 262.009 168.408 244.279 168.408ZM130.618 280.296C130.618 262.572 144.991 248.204 162.721 248.204H195.691V279.862C195.691 297.771 180.961 312.388 162.936 312.388C145.151 312.388 130.618 297.965 130.618 280.296ZM195.691 152.796H162.721C144.991 152.796 130.618 138.428 130.618 120.704C130.618 102.98 144.991 88.6122 162.721 88.6122H195.691V152.796Z" fill="currentColor"/>
+                  </svg>
+                  View on Figma
+                </a>
               </div>
             </div>
           </div>
@@ -470,7 +503,12 @@
               </div>
               <div class="project-buttons">
                 <a href="https://devpost.com/software/communilearn" class="project-button" target="_blank">See more</a>
-                <a href="https://www.figma.com/proto/AobhAGKzCdVkaPNV6WCK4j/CommuniLearn?node-id=211-1259&node-type=canvas&t=FaLhEYpDIOxDAVzr-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=211%3A1259" class="project-button-secondary" target="_blank">View on Figma</a>
+                <a href="https://www.figma.com/proto/AobhAGKzCdVkaPNV6WCK4j/CommuniLearn?node-id=211-1259&node-type=canvas&t=FaLhEYpDIOxDAVzr-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=211%3A1259" class="project-button-secondary" target="_blank">
+                  <svg class="figma-icon" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M162.721 168.408C144.991 168.408 130.618 182.776 130.618 200.5C130.618 218.224 144.991 232.592 162.721 232.592H195.691V200.5V168.408H162.721ZM243.412 152.796L244.279 152.796C262.009 152.796 276.382 138.428 276.382 120.704C276.382 102.98 262.009 88.6122 244.279 88.6122H211.309V152.796L243.412 152.796ZM270.448 160.602C283.429 152.077 292 137.391 292 120.704C292 94.3578 270.635 73 244.279 73H211.309H203.5H195.691H162.721C136.365 73 115 94.3578 115 120.704C115 137.391 123.571 152.077 136.552 160.602C123.571 169.128 115 183.813 115 200.5C115 217.187 123.571 231.872 136.552 240.398C123.571 248.923 115 263.609 115 280.296C115 306.697 136.636 328 162.936 328C189.476 328 211.309 306.503 211.309 279.862V248.204V240.398V235.796C219.785 243.505 231.05 248.204 243.412 248.204H244.279C270.635 248.204 292 226.846 292 200.5C292 183.813 283.429 169.128 270.448 160.602ZM244.279 168.408L243.412 168.408C225.682 168.408 211.309 182.776 211.309 200.5C211.309 218.224 225.682 232.592 243.412 232.592H244.279C262.009 232.592 276.382 218.224 276.382 200.5C276.382 182.776 262.009 168.408 244.279 168.408ZM130.618 280.296C130.618 262.572 144.991 248.204 162.721 248.204H195.691V279.862C195.691 297.771 180.961 312.388 162.936 312.388C145.151 312.388 130.618 297.965 130.618 280.296ZM195.691 152.796H162.721C144.991 152.796 130.618 138.428 130.618 120.704C130.618 102.98 144.991 88.6122 162.721 88.6122H195.691V152.796Z" fill="currentColor"/>
+                  </svg>
+                  View on Figma
+                </a>
               </div>
             </div>
           </div>
@@ -489,7 +527,12 @@
               </div>
               <div class="project-buttons">
                 <a href="https://devpost.com/software/shadowguard" class="project-button" target="_blank">See more</a>
-                <a href="https://www.figma.com/proto/sG4CILCfOzcBxUz4bE3No7/ShadowGuard?node-id=4-920&t=QdhvWHBac1krdzs5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A920" class="project-button-secondary" target="_blank">View on Figma</a>
+                <a href="https://www.figma.com/proto/sG4CILCfOzcBxUz4bE3No7/ShadowGuard?node-id=4-920&t=QdhvWHBac1krdzs5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A920" class="project-button-secondary" target="_blank">
+                  <svg class="figma-icon" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M162.721 168.408C144.991 168.408 130.618 182.776 130.618 200.5C130.618 218.224 144.991 232.592 162.721 232.592H195.691V200.5V168.408H162.721ZM243.412 152.796L244.279 152.796C262.009 152.796 276.382 138.428 276.382 120.704C276.382 102.98 262.009 88.6122 244.279 88.6122H211.309V152.796L243.412 152.796ZM270.448 160.602C283.429 152.077 292 137.391 292 120.704C292 94.3578 270.635 73 244.279 73H211.309H203.5H195.691H162.721C136.365 73 115 94.3578 115 120.704C115 137.391 123.571 152.077 136.552 160.602C123.571 169.128 115 183.813 115 200.5C115 217.187 123.571 231.872 136.552 240.398C123.571 248.923 115 263.609 115 280.296C115 306.697 136.636 328 162.936 328C189.476 328 211.309 306.503 211.309 279.862V248.204V240.398V235.796C219.785 243.505 231.05 248.204 243.412 248.204H244.279C270.635 248.204 292 226.846 292 200.5C292 183.813 283.429 169.128 270.448 160.602ZM244.279 168.408L243.412 168.408C225.682 168.408 211.309 182.776 211.309 200.5C211.309 218.224 225.682 232.592 243.412 232.592H244.279C262.009 232.592 276.382 218.224 276.382 200.5C276.382 182.776 262.009 168.408 244.279 168.408ZM130.618 280.296C130.618 262.572 144.991 248.204 162.721 248.204H195.691V279.862C195.691 297.771 180.961 312.388 162.936 312.388C145.151 312.388 130.618 297.965 130.618 280.296ZM195.691 152.796H162.721C144.991 152.796 130.618 138.428 130.618 120.704C130.618 102.98 144.991 88.6122 162.721 88.6122H195.691V152.796Z" fill="currentColor"/>
+                  </svg>
+                  View on Figma
+                </a>
               </div>
             </div>
           </div>
@@ -508,7 +551,12 @@
               </div>
               <div class="project-buttons">
                 <a href="https://devpost.com/software/ecobite-j5ekl1" class="project-button" target="_blank">See more</a>
-                <a href="https://www.figma.com/proto/O2DpVGAyI92fqLipmr9zvX/EcoBite?node-id=56-565&node-type=frame&t=FkwAADhC5lTa6wi5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=56%3A565" class="project-button-secondary" target="_blank">View on Figma</a>
+                <a href="https://www.figma.com/proto/O2DpVGAyI92fqLipmr9zvX/EcoBite?node-id=56-565&node-type=frame&t=FkwAADhC5lTa6wi5-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=56%3A565" class="project-button-secondary" target="_blank">
+                  <svg class="figma-icon" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M162.721 168.408C144.991 168.408 130.618 182.776 130.618 200.5C130.618 218.224 144.991 232.592 162.721 232.592H195.691V200.5V168.408H162.721ZM243.412 152.796L244.279 152.796C262.009 152.796 276.382 138.428 276.382 120.704C276.382 102.98 262.009 88.6122 244.279 88.6122H211.309V152.796L243.412 152.796ZM270.448 160.602C283.429 152.077 292 137.391 292 120.704C292 94.3578 270.635 73 244.279 73H211.309H203.5H195.691H162.721C136.365 73 115 94.3578 115 120.704C115 137.391 123.571 152.077 136.552 160.602C123.571 169.128 115 183.813 115 200.5C115 217.187 123.571 231.872 136.552 240.398C123.571 248.923 115 263.609 115 280.296C115 306.697 136.636 328 162.936 328C189.476 328 211.309 306.503 211.309 279.862V248.204V240.398V235.796C219.785 243.505 231.05 248.204 243.412 248.204H244.279C270.635 248.204 292 226.846 292 200.5C292 183.813 283.429 169.128 270.448 160.602ZM244.279 168.408L243.412 168.408C225.682 168.408 211.309 182.776 211.309 200.5C211.309 218.224 225.682 232.592 243.412 232.592H244.279C262.009 232.592 276.382 218.224 276.382 200.5C276.382 182.776 262.009 168.408 244.279 168.408ZM130.618 280.296C130.618 262.572 144.991 248.204 162.721 248.204H195.691V279.862C195.691 297.771 180.961 312.388 162.936 312.388C145.151 312.388 130.618 297.965 130.618 280.296ZM195.691 152.796H162.721C144.991 152.796 130.618 138.428 130.618 120.704C130.618 102.98 144.991 88.6122 162.721 88.6122H195.691V152.796Z" fill="currentColor"/>
+                  </svg>
+                  View on Figma
+                </a>
               </div>
             </div>
           </div>
