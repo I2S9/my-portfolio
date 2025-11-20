@@ -820,6 +820,7 @@
       <h2 class="sport-title">I am a sports person who loves training</h2>
       <div class="sport-images-wrapper">
         <div class="sport-images" id="sport-images-carousel">
+          <!-- Duplication de toutes les images pour la boucle infinie -->
           <div class="sport-image">
             <img src="images/médailles.jpg" alt="Medals" />
           </div>
@@ -837,6 +838,35 @@
           </div>
           <div class="sport-image">
             <img src="images/10-km-hoka.jpg" alt="10KM Hoka" />
+          </div>
+          <!-- Répétition pour la boucle infinie -->
+          <div class="sport-image">
+            <img src="images/médailles.jpg" alt="Medals" />
+          </div>
+          <div class="sport-image">
+            <img src="images/salle.jpg" alt="Gym" />
+          </div>
+          <div class="sport-image">
+            <img src="images/run-pics-strava.png" alt="Running Strava" />
+          </div>
+          <div class="sport-image">
+            <img src="images/semi-marathon.jpg" alt="Semi Marathon" />
+          </div>
+          <div class="sport-image">
+            <img src="images/hoka-paris.jpg" alt="Hoka Paris" />
+          </div>
+          <div class="sport-image">
+            <img src="images/10-km-hoka.jpg" alt="10KM Hoka" />
+          </div>
+          <!-- Encore une répétition pour garantir la fluidité -->
+          <div class="sport-image">
+            <img src="images/médailles.jpg" alt="Medals" />
+          </div>
+          <div class="sport-image">
+            <img src="images/salle.jpg" alt="Gym" />
+          </div>
+          <div class="sport-image">
+            <img src="images/run-pics-strava.png" alt="Running Strava" />
           </div>
         </div>
       </div>
@@ -1030,7 +1060,7 @@
     // Initialiser l'animation au chargement de la page
     document.addEventListener('DOMContentLoaded', animateCrigPolaroids);
     
-    // Carrousel synchronisé au scroll pour les images sport
+    // Carrousel synchronisé au scroll pour les images sport avec boucle infinie
     function initSportCarousel() {
       const sportSection = document.querySelector('.sport-section');
       const sportImages = document.getElementById('sport-images-carousel');
@@ -1041,14 +1071,19 @@
       const imageWidth = 300; // Largeur d'une image
       const gap = 30; // Espacement entre les images
       const imageTotalWidth = imageWidth + gap;
-      const totalImages = 6; // Nombre total d'images
-      const visibleImages = 4; // Nombre d'images visibles initialement
-      const maxScrollDistance = (totalImages - visibleImages) * imageTotalWidth;
+      const originalImages = 6; // Nombre d'images originales
+      
+      // La distance pour une boucle complète (6 images originales)
+      const loopDistance = originalImages * imageTotalWidth;
       
       // Calculer la position initiale pour centrer les 4 premières images
       const containerWidth = window.innerWidth;
       const fourImagesWidth = (4 * imageWidth) + (3 * gap);
-      const initialOffset = (containerWidth - fourImagesWidth) / 2;
+      const startOffset = (containerWidth - fourImagesWidth) / 2;
+      
+      // Position de départ : on commence à la position où les 4 premières images sont visibles
+      // On commence directement au début de la première série d'images
+      const initialOffset = startOffset;
       
       function handleScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -1062,21 +1097,34 @@
         const currentScroll = scrollTop;
         
         if (currentScroll >= sectionStart && currentScroll <= sectionEnd) {
-          // Calculer la progression dans la section (0 à 1)
-          const progress = Math.max(0, Math.min(1, (currentScroll - sectionStart) / (sectionEnd - sectionStart)));
+          // Calculer la progression dans la section (peut dépasser 1 pour continuer la boucle)
+          const sectionProgress = (currentScroll - sectionStart) / (sectionEnd - sectionStart);
           
-          // Calculer le décalage horizontal basé sur la progression
-          // On commence à initialOffset et on se décale vers la gauche
-          const scrollOffset = initialOffset - (progress * maxScrollDistance);
+          // Calculer le décalage horizontal avec boucle infinie
+          // Réduire la vitesse en divisant par un facteur (plus grand = plus lent)
+          const speedFactor = 0.35; // Facteur de vitesse (0.35 = plus lent)
+          const scrollMultiplier = 2; // Permet de scroller plusieurs fois la boucle
+          const totalScrollDistance = sectionProgress * loopDistance * scrollMultiplier * speedFactor;
+          
+          // Utiliser modulo pour créer la boucle infinie
+          const loopedDistance = totalScrollDistance % loopDistance;
+          
+          // Position finale : on part de initialOffset et on se décale vers la gauche
+          const scrollOffset = initialOffset - loopedDistance;
           
           // Appliquer la transformation
           sportImages.style.transform = `translateX(${scrollOffset}px)`;
         } else if (currentScroll < sectionStart) {
-          // Avant la section, images centrées (position initiale)
+          // Avant la section, position initiale
           sportImages.style.transform = `translateX(${initialOffset}px)`;
         } else if (currentScroll > sectionEnd) {
-          // Après la section, images à la position finale (les 2 dernières visibles)
-          sportImages.style.transform = `translateX(${initialOffset - maxScrollDistance}px)`;
+          // Après la section, continuer la boucle infinie
+          const extraScroll = currentScroll - sectionEnd;
+          const speedFactor = 0.35; // Même facteur de vitesse
+          const extraDistance = (extraScroll / (sectionHeight * 0.5)) * loopDistance * speedFactor;
+          const loopedExtraDistance = extraDistance % loopDistance;
+          const scrollOffset = initialOffset - loopedExtraDistance;
+          sportImages.style.transform = `translateX(${scrollOffset}px)`;
         }
       }
       
@@ -1097,7 +1145,8 @@
       window.addEventListener('resize', () => {
         const containerWidth = window.innerWidth;
         const fourImagesWidth = (4 * imageWidth) + (3 * gap);
-        const newInitialOffset = (containerWidth - fourImagesWidth) / 2;
+        const startOffset = (containerWidth - fourImagesWidth) / 2;
+        const newInitialOffset = startOffset - (3 * imageTotalWidth);
         handleScroll();
       });
     }
