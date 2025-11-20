@@ -881,43 +881,61 @@
   <script>
     // Fonction pour changer la langue
     function changeLanguage(lang) {
-      // Obtenir le chemin complet et extraire le nom de fichier
-      const pathname = window.location.pathname;
+      // Utiliser window.location.href pour obtenir l'URL complète
+      const currentUrl = window.location.href;
+      const urlObj = new URL(currentUrl);
+      let pathname = urlObj.pathname;
+      
+      // Nettoyer le pathname (enlever le slash final s'il existe)
+      if (pathname.endsWith('/') && pathname.length > 1) {
+        pathname = pathname.slice(0, -1);
+      }
+      
+      // Extraire le nom de fichier
       const currentPage = pathname.split('/').pop() || 'index.html';
       
-      // Déterminer le répertoire de base (peut être vide ou un sous-dossier)
+      // Déterminer le répertoire de base
       const basePath = pathname.substring(0, pathname.lastIndexOf('/') + 1);
+      
+      // Construire la nouvelle URL
+      let newPage = '';
       
       if (lang === 'fr') {
         // Rediriger vers la version française
         if (currentPage === 'about.html') {
-          window.location.href = basePath + 'about-fr.html';
+          newPage = basePath + 'about-fr.html';
         } else if (currentPage === 'index.html' || currentPage === '' || currentPage === '/') {
-          window.location.href = basePath + 'index-fr.html';
+          newPage = basePath + 'index-fr.html';
         } else if (currentPage === 'projects.html') {
-          window.location.href = basePath + 'projects-fr.html';
+          newPage = basePath + 'projects-fr.html';
         } else if (currentPage.endsWith('-fr.html')) {
           // Déjà sur la version française, ne rien faire
           return;
         } else {
           // Cas par défaut : rediriger vers index-fr.html
-          window.location.href = basePath + 'index-fr.html';
+          newPage = basePath + 'index-fr.html';
         }
       } else {
         // Rediriger vers la version anglaise
         if (currentPage === 'about-fr.html') {
-          window.location.href = basePath + 'about.html';
+          newPage = basePath + 'about.html';
         } else if (currentPage === 'index-fr.html') {
-          window.location.href = basePath + 'index.html';
+          newPage = basePath + 'index.html';
         } else if (currentPage === 'projects-fr.html') {
-          window.location.href = basePath + 'projects.html';
+          newPage = basePath + 'projects.html';
         } else if (!currentPage.endsWith('-fr.html')) {
           // Déjà sur la version anglaise, ne rien faire
           return;
         } else {
           // Cas par défaut : rediriger vers index.html
-          window.location.href = basePath + 'index.html';
+          newPage = basePath + 'index.html';
         }
+      }
+      
+      // Rediriger
+      if (newPage) {
+        urlObj.pathname = newPage;
+        window.location.href = urlObj.toString();
       }
     }
     
