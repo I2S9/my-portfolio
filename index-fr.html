@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="home" lang="en">
+<html class="home" lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -686,30 +686,30 @@
 </head>
 <body class="home">
   <nav class="navigation" role="navigation" aria-label="Global">
-    <button class="navigation__button" aria-expanded="false" aria-controls="navigation__list">Open Global Menu</button>
+    <button class="navigation__button" aria-expanded="false" aria-controls="navigation__list">Ouvrir le menu global</button>
     <ul class="navigation__list" id="navigation__list">
-      <li class="navigation__list__item"><a class="navigation__list__link" href="index.html">Home</a></li>
-      <li class="navigation__list__item"><a class="navigation__list__link" href="about.html">About me</a></li>
-      <li class="navigation__list__item"><a class="navigation__list__link" href="projects.html">Projects</a></li>
-      <li class="navigation__list__item"><a class="navigation__list__link" href="https://drive.google.com/file/d/129Q2oI__B3wdIz1mIIPVdPyhJcCQWQqz/view?usp=sharing">Resume</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="index-fr.html">Accueil</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="about-fr.html">À propos de moi</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="projects-fr.html">Projets</a></li>
+      <li class="navigation__list__item"><a class="navigation__list__link" href="https://drive.google.com/file/d/129Q2oI__B3wdIz1mIIPVdPyhJcCQWQqz/view?usp=sharing">CV</a></li>
       <li class="navigation__list__item"><a class="navigation__list__link" href="mailto:ines.gbadamassi@edu.univ-paris13.fr">Contact</a></li>
       <li class="navigation__list__item language-selector">
-        <a class="navigation__list__link language-toggle" href="#" onclick="return false;" data-lang="en">
-          en <span class="arrow-down">
+        <a class="navigation__list__link language-toggle" href="#" onclick="return false;" data-lang="fr">
+          fr <span class="arrow-down">
             <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </span>
         </a>
         <ul class="language-dropdown">
-          <li><a href="#" onclick="changeLanguage('fr'); return false;">fr</a></li>
+          <li><a href="#" onclick="changeLanguage('en'); return false;">en</a></li>
         </ul>
       </li>
     </ul>
   </nav>
   <main class="content" id="content" data-template="home">
     <section class="hero">
-      <h1>Meet your next<br /><span id="hero-heading-key-line">software</span><br />engineer.</h1>
+      <h1>Découvrez votre <span id="hero-heading-key-line">future ingénieure</span><br />informatique.</h1>
       <div id="hero-text-background-wrapper"><canvas id="hero-text-background" aria-hidden="true"></canvas></div>
       <canvas id="hero-indicator" aria-hidden="true"></canvas>
       <div class="fallback-image">
@@ -723,7 +723,7 @@
     </section>
     <section class="pixel-perfect">
       <div class="pixel-perfect--sticky">
-        <div class="pixel-perfect--copy"><p data-focus="72" tabindex="-1">I’m a problem solver</p></div>
+        <div class="pixel-perfect--copy"><p data-focus="72" tabindex="-1">J'aime résoudre des problèmes</p></div>
         <canvas id="pixel-grid" aria-hidden="true"></canvas>
       </div>
       <div class="fallback-image">
@@ -739,11 +739,11 @@
       <div class="animation--sticky">
         <div class="animation--copy">
           <p class="wrapper" tabindex="-1" data-focus="112">
-            <span class="word-wrap" role="text"><span class="text" role="text">with&nbsp;</span><span class="overlay"></span></span>
-            <span class="word-wrap" role="text"><span class="text" role="text">technical&nbsp;</span><span class="overlay"></span></span><br />
-            <span class="word-wrap" role="text"><span class="text" role="text">skills&nbsp;</span><span class="overlay"></span></span>
-            <span class="word-wrap" role="text"><span class="text" role="text">to&nbsp;</span><span class="overlay"></span></span>
-            <span class="word-wrap" role="text"><span class="text" role="text">boot.</span><span class="overlay"></span></span>
+            <span class="word-wrap" role="text"><span class="text" role="text">avec&nbsp;</span><span class="overlay"></span></span>
+            <span class="word-wrap" role="text"><span class="text" role="text">des&nbsp;</span><span class="overlay"></span></span><br />
+            <span class="word-wrap" role="text"><span class="text" role="text">compétences&nbsp;</span><span class="overlay"></span></span>
+            <span class="word-wrap" role="text"><span class="text" role="text">techniques&nbsp;</span><span class="overlay"></span></span>
+            <span class="word-wrap" role="text"><span class="text" role="text">solides.</span><span class="overlay"></span></span>
             <span class="flourish-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 100" aria-hidden="true">
                 <g stroke="#68BDE7" stroke-width="8" stroke-linecap="round" fill-rule="nonzero">
@@ -773,8 +773,8 @@
       <div class="interactive--sticky">
         <div class="interactive--copy">
           <span tabindex="-1" data-focus="150">
-            I love making <br />
-            (and breaking) things
+            J'adore créer <br />
+            (et casser) des choses
           </span>
         </div>
         <canvas id="interactive-game" aria-hidden="true"></canvas>
@@ -848,8 +848,8 @@
           <canvas id="dimensions-tesseracts" aria-hidden="true"></canvas>
           <div class="dimensions--copy">
             <span tabindex="-1" data-focus="0">
-              I’ve worked in <span class="visually-hidden" role="text">2D, 3D…and 4D?</span><span class="two" aria-hidden="true">Backend Dev</span><span class="three hidden" aria-hidden="true">Frontend Dev</span>
-              <span class="four hidden" aria-hidden="true">Machine Learning</span>
+              J'ai travaillé en <span class="visually-hidden" role="text">2D, 3D…et 4D ?</span><span class="two" aria-hidden="true">Développement Backend</span><span class="three hidden" aria-hidden="true">Développement Frontend</span>
+              <span class="four hidden" aria-hidden="true">Apprentissage automatique</span>
             </span>
           </div>
         </div>
@@ -879,23 +879,23 @@
       </div>
       <div class="photography--copy">
         <span tabindex="-1" data-focus="0">
-          and still manage <br />
-          to make free time.
+          et je trouve toujours <br />
+          du temps libre.
         </span>
       </div>
     </section>
     <section class="travel">
       <div class="travel--sticky">
         <div class="travel--copy">
-          <span id="travel-intro" tabindex="-1" data-focus="50">I’m up for new <span class="visually-hidden" role="text">adventures</span></span>
+          <span id="travel-intro" tabindex="-1" data-focus="50">Je suis prête pour de nouvelles <span class="visually-hidden" role="text">aventures</span></span>
         </div><canvas id="adventures-mask" aria-hidden="true"></canvas><div class="travel--overlay"></div>
       </div>
     </section>
     <section class="contact">
       <div class="contact--sticky">
         <div class="contact--copy">
-          <p tabindex="-1" data-focus="25">and I’d like to<br />work with you.</p>
-          <div class="contact--cta"><a href="mailto:ines.gbadamassi@edu.univ-paris13.fr">Contact me</a></div>
+          <p tabindex="-1" data-focus="25">et j'aimerais<br />travailler avec vous.</p>
+          <div class="contact--cta"><a href="mailto:ines.gbadamassi@edu.univ-paris13.fr">Contactez-moi</a></div>
         </div>
       </div>
     </section>
@@ -906,7 +906,7 @@
     <section class="school" id="schools" tabindex="-1">
       <div class="school_section_wrapper">
         <div class="school_section_inner_content-grid-1">
-          <div class="school--copy"><h2>Education</h2></div>
+          <div class="school--copy"><h2>Formation</h2></div>
           
           <div class="school-behind-title-icon">
             <div class="school-icon-title-holder">
@@ -918,11 +918,11 @@
               </div>
             </div>
             <div class="school-text-holder">
-              <h3 class="school-subtitle">Master of engineering in computer science</h3>
-              <h3 class="school-dates">September 2024 - June 2027</h3>
-              <p>Tutored mathematics and computer science for struggling students</p>
-              <p>National Student Entrepreneur status, followed Chinese language option</p>
-              <p>Relevant Courses: Data structure and algorithms, Complexity, AI Programming, </p>
+              <h3 class="school-subtitle">Diplôme d'ingénieur en informatique</h3>
+              <h3 class="school-dates">Septembre 2024 - Juin 2027</h3>
+              <p>Tutorat en mathématiques et informatique pour les élèves en difficulté</p>
+              <p>Statut national étudiant entrepreneur (SNEE), option langue chinoise suivie</p>
+              <p>Cours pertinents : Structures de données et algorithmes, Complexité, Programmation IA </p>
             </div>
           </div>
           
@@ -937,9 +937,9 @@
               </div>
             </div>
             <div class="school-text-holder">
-              <h3 class="school-subtitle">Bachelor of science in applied math and computer science</h3>
-              <h3 class="school-dates">September 2022 - June 2024</h3>
-              <p>Specialized French program with intensive courses in science and mathematics</p>
+              <h3 class="school-subtitle">Classes préparatoires intégrées</h3>
+              <h3 class="school-dates">Septembre 2022 - Juin 2024</h3>
+              <p>Spécialisation : Mathématiques et informatique</p>
             </div>
           </div>
         </div>
@@ -959,7 +959,7 @@
     
     <section class="work" id="work" tabindex="-1">
       
-      <div class="work--copy"><h2>Recent work and experiments</h2></div>
+      <div class="work--copy"><h2>Travaux récents et expérimentations</h2></div>
       <div class="work-carousel-wrapper">
         <div class="carousel-content">
           <div class="carousel-slides" id="workGrid">
@@ -978,14 +978,14 @@
               <hr />
               <img class="r_work_img" src="images/projects/EcoAdventures.png" alt="EcoAdventures" aria-hidden="true" />
             </div>
-            <a href="https://devpost.com/software/ecoadventures" class="project-button" target="_blank">See more</a>
+            <a href="https://devpost.com/software/ecoadventures" class="project-button" target="_blank">Voir plus</a>
           </article>
           <div id="Item5" class="work--item work--item__full work--item__black recent_work_content">
             <canvas id="anotherdei-background" aria-hidden="true"></canvas>
             <h3>EcoAdventures</h3>
             <span>2024</span>
             <hr />
-            <p>Discover a new form of tourism through ecological challenges to be met with friends!</p>
+            <p>Découvrez une nouvelle forme de tourisme à travers des défis écologiques à relever entre amis !</p>
           </div>
           
           
@@ -998,14 +998,14 @@
               <hr />
               <img class="r_work_img" src="images/projects/MoodQuest.png" alt="MoodQuest" aria-hidden="true" />
             </div>
-            <a href="https://devpost.com/software/moodquest" class="project-button" target="_blank">See more</a>
+            <a href="https://devpost.com/software/moodquest" class="project-button" target="_blank">Voir plus</a>
           </article>
           <div id="Item6" class="work--item work--item__full work--item__black recent_work_content">
             <canvas id="anotherdei-background" aria-hidden="true"></canvas>
             <h3>MoodQuest</h3>
             <span>2024</span>
             <hr />
-            <p>A mobile app designed to help users track and improve their mood through daily challenges and activities.</p>
+            <p>Une application mobile conçue pour aider les utilisateurs à suivre et améliorer leur humeur grâce à des défis et activités quotidiennes.</p>
           </div>
 
         <article class="work--item work--item__blue">
@@ -1017,7 +1017,7 @@
             <hr />
             <img class="r_work_img" src="images/projects/OOTD.png" alt="OOTD" aria-hidden="true" />
           </div>
-          <a href="https://devpost.com/software/ootd-y7a4ic" class="project-button" target="_blank">See more</a>
+          <a href="https://devpost.com/software/ootd-y7a4ic" class="project-button" target="_blank">Voir plus</a>
         </article>
         <div id="Item7" class="work--item work--item__full work--item__black recent_work_content">
           <canvas id="anotherdei-background" aria-hidden="true"></canvas>
@@ -1029,8 +1029,8 @@
       </div>
       <!-- Bouton View All dans l'espace vide à droite entre les deux lignes -->
       <div class="view-all-button-container">
-        <a href="projects.html" class="view-all-button">
-          <span>View All</span>
+        <a href="projects-fr.html" class="view-all-button">
+          <span>Voir tout</span>
           <span class="view-all-arrow">
             <svg width="14" height="12" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M15 7L9 13M15 7L9 1M15 7H1" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1048,7 +1048,7 @@
           <hr />
           <img class="r_work_img" src="images/projects/CommuniLearn.png" alt="CommuniLearn" aria-hidden="true" />
         </div>
-        <a href="https://devpost.com/software/communilearn" class="project-button" target="_blank">See more</a>
+        <a href="https://devpost.com/software/communilearn" class="project-button" target="_blank">Voir plus</a>
       </article>
       <div id="Item8" class="work--item work--item__full work--item__black recent_work_content">
         <canvas id="anotherdei-background" aria-hidden="true"></canvas>
@@ -1068,7 +1068,7 @@
           <hr />
           <img class="r_work_img" src="images/projects/IntelliLearn.png" alt="IntelliLearn" aria-hidden="true" />
         </div>
-        <a href="https://devpost.com/software/intelli-learn-thmxyr" class="project-button" target="_blank">See more</a>
+        <a href="https://devpost.com/software/intelli-learn-thmxyr" class="project-button" target="_blank">Voir plus</a>
       </article>
       <div id="Item9" class="work--item work--item__full work--item__black recent_work_content">
         <canvas id="anotherdei-background" aria-hidden="true"></canvas>
@@ -1087,7 +1087,7 @@
         <hr />
         <img class="r_work_img" src="images/projects/MemorAIze.png" alt="MemorAIze" aria-hidden="true" />
       </div>
-      <a href="https://memoraizeapp.vercel.app/" class="project-button" target="_blank">See more</a>
+      <a href="https://memoraizeapp.vercel.app/" class="project-button" target="_blank">Voir plus</a>
     </article>
     <div id="Item10" class="work--item work--item__full work--item__black recent_work_content">
       <canvas id="anotherdei-background" aria-hidden="true"></canvas>
@@ -1398,10 +1398,10 @@
           projectCard.appendChild(descElement);
         }
         
-        // Créer le bouton "See more"
+        // Créer le bouton "Voir plus"
         const seeMoreBtn = document.createElement('a');
         seeMoreBtn.className = 'project-button';
-        seeMoreBtn.textContent = 'See more';
+        seeMoreBtn.textContent = 'Voir plus';
         
         if (existingLink) {
           seeMoreBtn.href = existingLink.href;
