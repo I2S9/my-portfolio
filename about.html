@@ -407,6 +407,8 @@
       padding: 8vh 5%;
       background-color: #ffffff;
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
     .sport-title {
       font-family: Articulat CF, system-ui, sans-serif;
@@ -419,19 +421,26 @@
       margin: 0 auto 4vh auto;
       max-width: 900px;
     }
+    .sport-images-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
     .sport-images {
       display: flex;
       gap: 30px;
-      justify-content: center;
       align-items: stretch;
-      flex-wrap: wrap;
-      max-width: 1400px;
-      margin: 0 auto;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      will-change: transform;
+      width: fit-content;
     }
     .sport-image {
-      flex: 1;
+      flex: 0 0 auto;
+      width: 300px;
       min-width: 300px;
-      max-width: 400px;
+      max-width: 300px;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -456,12 +465,29 @@
         margin-bottom: 3vh;
       }
       .sport-images {
-        flex-direction: column;
         gap: 20px;
+        padding: 0 3%;
       }
       .sport-image {
-        min-width: 100%;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+      }
+      .values-title {
+        font-size: 2em;
+        margin-bottom: 4vh;
+      }
+      .values-content {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0;
+        padding: 0;
         max-width: 100%;
+      }
+      .value-item {
+        font-size: 0.9em;
+        width: 120px;
+        height: 100px;
+        padding: 15px 20px;
       }
     }
     /* Section Stats Bandeau */
@@ -531,6 +557,110 @@
       background: linear-gradient(to left, transparent, #e6f2ff);
       pointer-events: none;
       z-index: 1;
+    }
+    /* Section My Values */
+    .values-section {
+      width: 100%;
+      padding: 8vh 5%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .values-title {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 2.5em;
+      color: #000000;
+      text-align: center;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin: 0 auto 6vh auto;
+    }
+    .values-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(6, 140px);
+      gap: 0;
+      padding: 0;
+      width: fit-content;
+      justify-content: center;
+    }
+    .value-item {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.2em;
+      color: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px 30px;
+      transition: transform 0.3s ease, z-index 0.3s ease;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+    }
+    .value-item:hover {
+      transform: scale(1.15);
+      z-index: 10;
+    }
+    /* Carrés simples */
+    .value-item {
+      width: 140px;
+      height: 120px;
+      padding: 20px 25px;
+      border-radius: 0;
+    }
+    .value-item.rounded-top-left {
+      border-top-left-radius: 15px;
+    }
+    .value-item.rounded-bottom-left {
+      border-bottom-left-radius: 15px;
+    }
+    .value-item.rounded-top-right {
+      border-top-right-radius: 15px;
+    }
+    .value-item.rounded-bottom-right {
+      border-bottom-right-radius: 15px;
+    }
+    .value-item.pastel-1 {
+      background-color: #FFE5E5;
+    }
+    .value-item.pastel-2 {
+      background-color: #E5F3FF;
+    }
+    .value-item.pastel-3 {
+      background-color: #FFF5E5;
+    }
+    .value-item.pastel-4 {
+      background-color: #E5FFE5;
+    }
+    .value-item.pastel-5 {
+      background-color: #F0E5FF;
+    }
+    .value-item.pastel-6 {
+      background-color: #FFE5F5;
+    }
+    .value-item.pastel-7 {
+      background-color: #FFE8D6;
+    }
+    .value-item.pastel-yellow {
+      background-color: #FFF9D6;
+    }
+    .value-item.pastel-orange {
+      background-color: #FFE8D6;
+    }
+    .value-item.pastel-green {
+      background-color: #E5FFE5;
+    }
+    .value-item.pastel-pink {
+      background-color: #FFE5E5;
+    }
+    .value-item.pastel-blue {
+      background-color: #D6E8FF;
+    }
+    .value-item.pastel-violet {
+      background-color: #E6D9FF;
     }
     @media (max-width: 768px) {
       .about-content {
@@ -688,18 +818,26 @@
     </section>
     <section class="sport-section">
       <h2 class="sport-title">I am a sports person who loves training</h2>
-      <div class="sport-images">
-        <div class="sport-image">
-          <img src="images/médailles.jpg" alt="Medals" />
-        </div>
-        <div class="sport-image">
-          <img src="images/salle.jpg" alt="Gym" />
-        </div>
-        <div class="sport-image">
-          <img src="images/run-pics-strava.png" alt="Running Strava" />
-        </div>
-        <div class="sport-image">
-          <img src="images/semi-marathon.jpg" alt="Semi Marathon" />
+      <div class="sport-images-wrapper">
+        <div class="sport-images" id="sport-images-carousel">
+          <div class="sport-image">
+            <img src="images/médailles.jpg" alt="Medals" />
+          </div>
+          <div class="sport-image">
+            <img src="images/salle.jpg" alt="Gym" />
+          </div>
+          <div class="sport-image">
+            <img src="images/run-pics-strava.png" alt="Running Strava" />
+          </div>
+          <div class="sport-image">
+            <img src="images/semi-marathon.jpg" alt="Semi Marathon" />
+          </div>
+          <div class="sport-image">
+            <img src="images/hoka-paris.jpg" alt="Hoka Paris" />
+          </div>
+          <div class="sport-image">
+            <img src="images/10-km-hoka.jpg" alt="10KM Hoka" />
+          </div>
         </div>
       </div>
     </section>
@@ -805,6 +943,23 @@
         </div>
       </div>
     </section>
+    <section class="values-section">
+      <h2 class="values-title">My Values</h2>
+      <div class="values-content">
+        <div class="value-item pastel-1 rounded-top-left">Curiosity</div>
+        <div class="value-item pastel-2">Excellence</div>
+        <div class="value-item pastel-yellow">Innovation</div>
+        <div class="value-item pastel-4">Collaboration</div>
+        <div class="value-item pastel-5">Resilience</div>
+        <div class="value-item pastel-2 rounded-top-right">Balance</div>
+        <div class="value-item pastel-yellow rounded-bottom-left">Growth</div>
+        <div class="value-item pastel-green">Integrity</div>
+        <div class="value-item pastel-5">Passion</div>
+        <div class="value-item pastel-orange">Adaptability</div>
+        <div class="value-item pastel-pink">Empathy</div>
+        <div class="value-item pastel-yellow rounded-bottom-right">Perseverance</div>
+      </div>
+    </section>
   </main>
   <footer aria-label="Footer">
     <div class="footer__inner">
@@ -874,6 +1029,81 @@
     
     // Initialiser l'animation au chargement de la page
     document.addEventListener('DOMContentLoaded', animateCrigPolaroids);
+    
+    // Carrousel synchronisé au scroll pour les images sport
+    function initSportCarousel() {
+      const sportSection = document.querySelector('.sport-section');
+      const sportImages = document.getElementById('sport-images-carousel');
+      
+      if (!sportSection || !sportImages) return;
+      
+      // Calculer la distance de défilement
+      const imageWidth = 300; // Largeur d'une image
+      const gap = 30; // Espacement entre les images
+      const imageTotalWidth = imageWidth + gap;
+      const totalImages = 6; // Nombre total d'images
+      const visibleImages = 4; // Nombre d'images visibles initialement
+      const maxScrollDistance = (totalImages - visibleImages) * imageTotalWidth;
+      
+      // Calculer la position initiale pour centrer les 4 premières images
+      const containerWidth = window.innerWidth;
+      const fourImagesWidth = (4 * imageWidth) + (3 * gap);
+      const initialOffset = (containerWidth - fourImagesWidth) / 2;
+      
+      function handleScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const sectionTop = sportSection.offsetTop;
+        const sectionHeight = sportSection.offsetHeight;
+        const windowHeight = window.innerHeight;
+        
+        // Vérifier si on est dans la zone de la section sport
+        const sectionStart = sectionTop - windowHeight * 0.5;
+        const sectionEnd = sectionTop + sectionHeight - windowHeight * 0.5;
+        const currentScroll = scrollTop;
+        
+        if (currentScroll >= sectionStart && currentScroll <= sectionEnd) {
+          // Calculer la progression dans la section (0 à 1)
+          const progress = Math.max(0, Math.min(1, (currentScroll - sectionStart) / (sectionEnd - sectionStart)));
+          
+          // Calculer le décalage horizontal basé sur la progression
+          // On commence à initialOffset et on se décale vers la gauche
+          const scrollOffset = initialOffset - (progress * maxScrollDistance);
+          
+          // Appliquer la transformation
+          sportImages.style.transform = `translateX(${scrollOffset}px)`;
+        } else if (currentScroll < sectionStart) {
+          // Avant la section, images centrées (position initiale)
+          sportImages.style.transform = `translateX(${initialOffset}px)`;
+        } else if (currentScroll > sectionEnd) {
+          // Après la section, images à la position finale (les 2 dernières visibles)
+          sportImages.style.transform = `translateX(${initialOffset - maxScrollDistance}px)`;
+        }
+      }
+      
+      // Utiliser requestAnimationFrame pour des performances optimales
+      let rafId = null;
+      window.addEventListener('scroll', () => {
+        if (rafId) return;
+        rafId = requestAnimationFrame(() => {
+          handleScroll();
+          rafId = null;
+        });
+      }, { passive: true });
+      
+      // Initialiser la position au chargement
+      handleScroll();
+      
+      // Recalculer lors du redimensionnement de la fenêtre
+      window.addEventListener('resize', () => {
+        const containerWidth = window.innerWidth;
+        const fourImagesWidth = (4 * imageWidth) + (3 * gap);
+        const newInitialOffset = (containerWidth - fourImagesWidth) / 2;
+        handleScroll();
+      });
+    }
+    
+    // Initialiser le carrousel au chargement de la page
+    document.addEventListener('DOMContentLoaded', initSportCarousel);
   </script>
 </body>
 </html>
