@@ -575,6 +575,86 @@
       line-height: 1;
       margin: 0 auto 6vh auto;
     }
+    /* Section Education */
+    .education-section {
+      width: 100%;
+      padding: 8vh 5%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .education-title {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 2.5em;
+      color: #000000;
+      text-align: center;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin: 0 auto 6vh auto;
+    }
+    .education-columns {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding: 0 5%;
+      text-align: left;
+    }
+    .education-column {
+      background-color: #ffffff;
+      padding: 30px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+    }
+    .education-column-header {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.3em;
+      color: #000000;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .education-column-period {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1.1em;
+      color: #aaaaaa;
+      margin-bottom: 25px;
+      font-style: italic;
+      font-weight: 200;
+    }
+    .education-category {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.1em;
+      color: #000000;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .education-category:first-child {
+      margin-top: 0;
+    }
+    .education-item {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+      font-size: 0.95em;
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 6px;
+      padding-left: 0;
+      list-style: none;
+    }
+    .education-item::before {
+      content: "• ";
+      color: #000000;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    @media (max-width: 1200px) {
+      .education-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
     .values-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -988,6 +1068,62 @@
         <div class="value-item pastel-orange">Adaptabilité</div>
         <div class="value-item pastel-pink">Empathie</div>
         <div class="value-item pastel-yellow rounded-bottom-right">Persévérance</div>
+      </div>
+    </section>
+    <section class="education-section">
+      <h2 class="education-title">Éducation</h2>
+      <div class="education-columns">
+        <div class="education-column">
+          <div class="education-column-header">École d'ingénieurs Sup Galilée</div>
+          <div class="education-column-period">Classes préparatoires scientifiques</div>
+          <div class="education-category">Mathématiques:</div>
+          <div class="education-item">Algèbre linéaire et multilinéaire</div>
+          <div class="education-item">Analyse réelle (Asymptotiques, Calcul différentiel, Intégration...)</div>
+          <div class="education-item">Théorie des probabilités et statistiques</div>
+          <div class="education-item">Équations différentielles (EDO et EDP)</div>
+          <div class="education-item">Théorie des groupes, anneaux et corps</div>
+          <div class="education-item">Méthodes numériques et calcul scientifique</div>
+          <div class="education-category">Physique:</div>
+          <div class="education-item">Mécanique classique (Newtonienne)</div>
+          <div class="education-item">Thermodynamique</div>
+          <div class="education-item">Électromagnétisme et optique</div>
+          <div class="education-category">Informatique:</div>
+          <div class="education-item">Structures de données et algorithmes (C)</div>
+          <div class="education-item">Automates et théorie de la complexité</div>
+          <div class="education-item">Programmation impérative et théorie des jeux et théorie des graphes</div>
+          <div class="education-item">Conception d'algorithmes</div>
+          <div class="education-item">Méthodes algébriques pour l'informatique</div>
+          <div class="education-item">Initiation aux interfaces graphiques</div>
+        </div>
+        <div class="education-column">
+          <div class="education-column-header">École d'ingénieurs Sup Galilée</div>
+          <div class="education-column-period">Master 1</div>
+          <div class="education-category">Mathématiques:</div>
+          <div class="education-item">Théorie de la mesure</div>
+          <div class="education-item">Statistiques (Estimateurs, Introduction à la théorie de l'apprentissage statistique...)</div>
+          <div class="education-item">Chaînes de Markov et martingales</div>
+          <div class="education-item">Optimisation convexe et théorie du contrôle</div>
+          <div class="education-item">Analyse complexe et calcul différentiel</div>
+          <div class="education-category">Informatique:</div>
+          <div class="education-item">Programmation orientée objet en Java</div>
+          <div class="education-item">Structures de données et algorithmes avancés</div>
+          <div class="education-item">Algorithmes pour la science des données</div>
+        </div>
+        <div class="education-column">
+          <div class="education-column-header">École d'ingénieurs Sup Galilée</div>
+          <div class="education-column-period">Master 2 (à venir)</div>
+          <div class="education-category">Mathématiques:</div>
+          <div class="education-item">Projet de recherche (6 mois)</div>
+          <div class="education-item">Théorie des probabilités pour le ML (Monte-Carlo et modèles génératifs)</div>
+          <div class="education-item">Théorie de l'apprentissage statistique</div>
+          <div class="education-item">Processus statistiques</div>
+          <div class="education-item">Topologie algébrique</div>
+          <div class="education-item">Géométrie riemannienne</div>
+          <div class="education-item">Théorie des matrices aléatoires</div>
+          <div class="education-category">Informatique:</div>
+          <div class="education-item">Apprentissage profond sur graphes</div>
+          <div class="education-item">IA générative multimodale</div>
+        </div>
       </div>
     </section>
   </main>

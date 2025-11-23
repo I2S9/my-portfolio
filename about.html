@@ -575,6 +575,86 @@
       line-height: 1;
       margin: 0 auto 6vh auto;
     }
+    /* Section Education */
+    .education-section {
+      width: 100%;
+      padding: 8vh 5%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .education-title {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 2.5em;
+      color: #000000;
+      text-align: center;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin: 0 auto 6vh auto;
+    }
+    .education-columns {
+      max-width: 1600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding: 0 5%;
+      text-align: left;
+    }
+    .education-column {
+      background-color: #ffffff;
+      padding: 30px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+    }
+    .education-column-header {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.3em;
+      color: #000000;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .education-column-period {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1.1em;
+      color: #aaaaaa;
+      margin-bottom: 25px;
+      font-style: italic;
+      font-weight: 200;
+    }
+    .education-category {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.1em;
+      color: #000000;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .education-category:first-child {
+      margin-top: 0;
+    }
+    .education-item {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+      font-size: 0.95em;
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 6px;
+      padding-left: 0;
+      list-style: none;
+    }
+    .education-item::before {
+      content: "• ";
+      color: #000000;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    @media (max-width: 1200px) {
+      .education-columns {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
     .values-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -988,6 +1068,62 @@
         <div class="value-item pastel-orange">Adaptability</div>
         <div class="value-item pastel-pink">Empathy</div>
         <div class="value-item pastel-yellow rounded-bottom-right">Perseverance</div>
+      </div>
+    </section>
+    <section class="education-section">
+      <h2 class="education-title">Education</h2>
+      <div class="education-columns">
+        <div class="education-column">
+          <div class="education-column-header">Sup Galilée, Sorbonne University</div>
+          <div class="education-column-period">Bachelor (Years 1 & 2)</div>
+          <div class="education-category">Mathematics:</div>
+          <div class="education-item">Linear Algebra and Multilinear Algebra</div>
+          <div class="education-item">Real Analysis (Asymptotics, Differential Calculus, Integration...)</div>
+          <div class="education-item">Probability Theory and Statistics</div>
+          <div class="education-item">Differential Equations (ODEs and PDEs)</div>
+          <div class="education-item">Group, Ring, and Field Theory</div>
+          <div class="education-item">Numerical Methods and Scientific Computing</div>
+          <div class="education-category">Physics:</div>
+          <div class="education-item">Classical Mechanics (Newtonian)</div>
+          <div class="education-item">Thermodynamics</div>
+          <div class="education-item">Electromagnetism and Optics</div>
+          <div class="education-category">Computer Science:</div>
+          <div class="education-item">Data Structures and Algorithms (C)</div>
+          <div class="education-item">Automata and Complexity Theory</div>
+          <div class="education-item">Imperative Programming and Game Theory and Graph Theory</div>
+          <div class="education-item">Algorithm Design</div>
+          <div class="education-item">Algebraic Methods for Computer Science</div>
+          <div class="education-item">Introduction to Graphical Interfaces</div>
+        </div>
+        <div class="education-column">
+          <div class="education-column-header">Sup Galilée, Sorbonne University</div>
+          <div class="education-column-period">Master 1</div>
+          <div class="education-category">Mathematics:</div>
+          <div class="education-item">Measure Theory</div>
+          <div class="education-item">Statistics (Estimators, Introduction to Statistical Learning Theory...)</div>
+          <div class="education-item">Markov Chains and Martingales</div>
+          <div class="education-item">Convex Optimization and Control Theory</div>
+          <div class="education-item">Complex Analysis and Differential Calculus</div>
+          <div class="education-category">Computer Science:</div>
+          <div class="education-item">Object-Oriented Programming in Java</div>
+          <div class="education-item">Advanced Data Structures and Algorithms</div>
+          <div class="education-item">Algorithms for Data Science</div>
+        </div>
+        <div class="education-column">
+          <div class="education-column-header">Sup Galilée, Sorbonne University</div>
+          <div class="education-column-period">Master 2 (upcoming)</div>
+          <div class="education-category">Mathematics:</div>
+          <div class="education-item">Research Project (6 months)</div>
+          <div class="education-item">Probability Theory for ML (Monte-Carlo and Generative Models)</div>
+          <div class="education-item">Statistical Learning Theory</div>
+          <div class="education-item">Statistical Processes</div>
+          <div class="education-item">Algebraic Topology</div>
+          <div class="education-item">Riemannian Geometry</div>
+          <div class="education-item">Random Matrix Theory</div>
+          <div class="education-category">Computer Science:</div>
+          <div class="education-item">Graph Deep Learning</div>
+          <div class="education-item">Multimodal Generative AI</div>
+        </div>
       </div>
     </section>
   </main>
