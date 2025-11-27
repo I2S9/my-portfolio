@@ -853,6 +853,74 @@
         height: 60px;
       }
     }
+    /* Section Certifications */
+    .certifications-section {
+      width: 100%;
+      padding: 2vh 5% 8vh 5%;
+      background-color: #ffffff;
+      text-align: center;
+    }
+    .certifications-title {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 2.5em;
+      color: #000000;
+      text-align: center;
+      letter-spacing: -0.5px;
+      line-height: 1;
+      margin: 0 auto 6vh auto;
+    }
+    .certifications-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .certification-item {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      padding: 10px 25px;
+      background-color: #ffffff;
+      border: 0.5px solid #e0e0e0;
+      border-radius: 12px;
+      text-align: left;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .certification-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      flex-shrink: 0;
+      display: block;
+    }
+    .certification-name {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+      font-size: 1.1em;
+      color: #000000;
+      font-weight: 500;
+    }
+    .certification-item a {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      .certification-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .certification-logo {
+        width: 60px;
+        height: 60px;
+      }
+    }
     .values-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -1255,10 +1323,10 @@
       <h2 class="values-title">Mes Valeurs</h2>
       <div class="values-content">
         <div class="value-item pastel-1 rounded-top-left">Curiosité</div>
-        <div class="value-item pastel-2">Excellence</div>
+        <div class="value-item pastel-2">Résilience</div>
         <div class="value-item pastel-yellow">Innovation</div>
         <div class="value-item pastel-4">Collaboration</div>
-        <div class="value-item pastel-5">Résilience</div>
+        <div class="value-item pastel-5">Créativité</div>
         <div class="value-item pastel-2 rounded-top-right">Équilibre</div>
         <div class="value-item pastel-yellow rounded-bottom-left">Croissance</div>
         <div class="value-item pastel-green">Intégrité</div>
@@ -1394,7 +1462,7 @@
           <div class="experience-content">
             <div class="experience-header">
               <div class="experience-role">Tutrice en mathématiques et informatique</div>
-              <div class="experience-company">Indépendant · Paris, France</div>
+              <div class="experience-company">Bénévolat · Sorbonne Université, Paris, France</div>
               <div class="experience-period">Septembre 2023 - Aujourd'hui</div>
             </div>
             <div class="experience-description">
@@ -1456,6 +1524,27 @@
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="certifications-section">
+      <h2 class="certifications-title">Certifications</h2>
+      <div class="certifications-container">
+        <div class="certification-item">
+          <img src="images/Udemy-Logo.png" alt="Udemy" class="certification-logo" />
+          <a href="https://drive.google.com/file/d/1SVjSPo1fxE9DfkxJN97jnu78PZefRTnf/view?usp=sharing" target="_blank" class="certification-name">C Programming Bootcamp</a>
+        </div>
+        <div class="certification-item">
+          <img src="images/Udemy-Logo.png" alt="Udemy" class="certification-logo" />
+          <a href="https://drive.google.com/file/d/1q_5vETD41jmnAOD-QoHK5J08IlYos_w8/view?usp=sharing" target="_blank" class="certification-name">C Programming Masterclass</a>
+        </div>
+        <div class="certification-item">
+          <img src="images/git-github-logo.avif" alt="Git and Github" class="certification-logo" />
+          <a href="https://drive.google.com/file/d/1gN-UbVIKc__cjQwmb257sukxKKH97uzq/view?usp=sharing" target="_blank" class="certification-name">Git and Github</a>
+        </div>
+        <div class="certification-item">
+          <img src="images/sql-logo.webp" alt="SQL" class="certification-logo" />
+          <a href="https://drive.google.com/file/d/1qixUVUlLIQrhmnZeWpL5edEMhLhHIQ_N/view?usp=sharing" target="_blank" class="certification-name">The Complete SQL Bootcamp</a>
         </div>
       </div>
     </section>
