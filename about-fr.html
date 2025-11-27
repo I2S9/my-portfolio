@@ -762,6 +762,97 @@
       line-height: 1;
       margin: 0 auto 6vh auto;
     }
+    .experience-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .experience-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      padding: 30px;
+      background-color: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience-item:hover {
+      transform: translateY(-3px);
+    }
+    .experience-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .experience-logo.sorbonne-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+    .experience-content {
+      flex: 1;
+    }
+    .experience-header {
+      margin-bottom: 10px;
+    }
+    .experience-role {
+      font-family: Articulat CF, system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 1.3em;
+      color: #000000;
+      margin-bottom: 5px;
+    }
+    .experience-company {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+      font-size: 1em;
+      color: #666666;
+      margin-bottom: 5px;
+    }
+    .experience-period {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+      font-size: 0.95em;
+      color: #888888;
+    }
+    .experience-description {
+      margin-top: 15px;
+    }
+    .experience-description ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .experience-description li {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+      font-size: 0.95em;
+      color: #333333;
+      line-height: 1.7;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .experience-description li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #000000;
+      font-weight: bold;
+    }
+    @media (max-width: 768px) {
+      .experience-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .experience-logo {
+        width: 60px;
+        height: 60px;
+      }
+    }
     .values-content {
       max-width: 1200px;
       margin: 0 auto;
@@ -1297,6 +1388,76 @@
     </section>
     <section class="experience-section">
       <h2 class="experience-title">Expérience</h2>
+      <div class="experience-container">
+        <div class="experience-item">
+          <img src="images/sorbonne-logo.png" alt="Sorbonne Université" class="experience-logo sorbonne-logo" />
+          <div class="experience-content">
+            <div class="experience-header">
+              <div class="experience-role">Tutrice en mathématiques et informatique</div>
+              <div class="experience-company">Indépendant · Paris, France</div>
+              <div class="experience-period">Septembre 2023 - Aujourd'hui</div>
+            </div>
+            <div class="experience-description">
+              <ul>
+                <li>Cours particuliers : tutorat des élèves de classes préparatoires à raison de deux fois par semaine, communication, conseils, explications et personnalisation des séances.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="experience-item">
+          <img src="images/oxford-logo.png" alt="Oxford Machine Learning Summer School" class="experience-logo" />
+          <div class="experience-content">
+            <div class="experience-header">
+              <div class="experience-role">Programme avancé en IA générative (IA/ML)</div>
+              <div class="experience-company">Oxford Machine Learning Summer School · À distance</div>
+              <div class="experience-period">Juillet 2024</div>
+            </div>
+            <div class="experience-description">
+              <ul>
+                <li>Suivi du programme "Representation Learning and Generative AI" (22 heures de cours avancés et ateliers pratiques).</li>
+                <li>Apprentissage approfondi des concepts de modèles génératifs (IA générative), incluant les Large Language Models (LLMs).</li>
+                <li>Étude des techniques de signal processing, deep learning, comparaison entre comportements humains et machine.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="experience-item">
+          <img src="images/academie-paris.png" alt="DSI DRASI Académie de Paris" class="experience-logo" />
+          <div class="experience-content">
+            <div class="experience-header">
+              <div class="experience-role">Assistante Ingénieure Logiciel - Stage d'observation</div>
+              <div class="experience-company">DSI DRASI Académie de Paris</div>
+              <div class="experience-period">Avril 2024</div>
+            </div>
+            <div class="experience-description">
+              <ul>
+                <li>Découvert l'architecture système et la gestion d'infrastructure</li>
+                <li>Observé les processus de migration d'une base de données</li>
+                <li>Appris la gestion et maintenance des serveurs</li>
+                <li>Exploré le développement mobile d'une application</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="experience-item">
+          <img src="images/HSBC-logo.png" alt="HSBC" class="experience-logo" />
+          <div class="experience-content">
+            <div class="experience-header">
+              <div class="experience-role">Assistante informatique en finance - Stage d'observation</div>
+              <div class="experience-company">HSBC</div>
+              <div class="experience-period">Décembre 2017</div>
+            </div>
+            <div class="experience-description">
+              <ul>
+                <li>Découvert l'infrastructure informatique en environnement financier</li>
+                <li>Observé les systèmes de gestion de données financières</li>
+                <li>Découvert les pratiques de cybersécurité dans le secteur bancaire</li>
+                <li>Exploré les processus de support informatique en entreprise</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer aria-label="Footer">
