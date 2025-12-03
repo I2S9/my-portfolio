@@ -430,11 +430,32 @@
       background-color: #333333;
     }
     /* Uniformiser les images dans les cartes work--item */
+    .work--item .work_detail {
+      position: relative;
+    }
+    /* Conteneur uniforme pour toutes les images */
+    .work--item .work_detail hr {
+      margin: 12px 0 !important;
+    }
+    /* Wrapper pour l'image avec dimensions fixes et position uniforme */
+    .work--item .work_detail hr + img.r_work_img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      flex-shrink: 0;
+    }
     .work--item .r_work_img {
       width: 100%;
       height: 160px;
       object-fit: cover;
       display: block;
+      margin: 0;
+      padding: 0;
+      flex-shrink: 0;
     }
     /* Structure des cartes work--item pour aligner le bouton */
     .work--item {
@@ -447,23 +468,49 @@
       display: flex;
       flex-direction: column;
     }
-    /* Aligner le titre et la date */
+    /* Aligner le titre et la date - styles d'origine restaurés avec hauteur fixe pour aligner les images */
     .work--item .work--title {
       margin-left: 0 !important;
       padding-left: 0 !important;
+      margin-bottom: 4px !important;
+      margin-top: 0 !important;
+      height: 60px;
+      display: flex;
+      align-items: flex-start;
+      overflow: hidden;
     }
     .work--item .work--title h3 {
       margin-left: 0 !important;
       padding-left: 0 !important;
+      margin: 0 !important;
+      line-height: 1.3;
     }
     .work--item .work_detail > span {
       margin-left: 0 !important;
       padding-left: 0 !important;
+      margin-bottom: 4px !important;
+      margin-top: 0 !important;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .work--item .work_detail hr {
+      margin: 8px 0 !important;
+      flex-shrink: 0;
+      height: 1px;
+    }
+    /* S'assurer que l'image n'est pas masquée par le bouton et qu'elle commence toujours au même endroit */
+    .work--item .r_work_img {
+      margin-bottom: 12px !important;
+      margin-top: 0 !important;
     }
     .work--item > a.project-button {
       margin-top: auto;
       align-self: center;
       margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
     }
     .work--item {
       padding-bottom: 10px;
@@ -1062,7 +1109,7 @@
       <article class="work--item work--item__blue">
         <div class="work_detail worklinks" onclick="openWorkDes(event, 'Item9')">
           <div class="work--title">
-            <h3>Détection de Faux Engagement via Séries Temporelles et ML</h3>
+            <h3>Détection de Faux Engagement via ML</h3>
           </div>
           <span>2025</span>
           <hr />
