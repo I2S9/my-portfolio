@@ -1240,24 +1240,34 @@
         });
       });
       
-      // Forcer la boucle des GIFs en les rechargant quand ils deviennent visibles
+      // Forcer la boucle des GIFs en les rechargant périodiquement
       const gifImages = document.querySelectorAll('.project-image[src*=".gif"]');
       gifImages.forEach(img => {
-        // Recharger le GIF pour forcer le redémarrage
-        const originalSrc = img.src;
-        img.src = '';
-        img.src = originalSrc;
+        // Obtenir le src original sans paramètres de requête
+        const originalSrc = img.src.split('?')[0];
+        
+        // Fonction pour recharger le GIF avec un timestamp pour forcer le rechargement
+        const reloadGif = () => {
+          const timestamp = new Date().getTime();
+          img.src = originalSrc + '?t=' + timestamp;
+        };
+        
+        // Recharger immédiatement au chargement
+        reloadGif();
         
         // Observer pour recharger le GIF quand il devient visible
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              const gif = entry.target;
-              const src = gif.src;
-              gif.src = '';
-              setTimeout(() => {
-                gif.src = src;
-              }, 10);
+              reloadGif();
+              // Recharger périodiquement pour forcer la boucle
+              const intervalId = setInterval(() => {
+                if (entry.isIntersecting) {
+                  reloadGif();
+                } else {
+                  clearInterval(intervalId);
+                }
+              }, 5000); // Recharger toutes les 5 secondes pour forcer la boucle
             }
           });
         }, { threshold: 0.1 });
